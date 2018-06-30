@@ -13,13 +13,12 @@
                     <h2>Application For Leave</h2>
                     <ul class="nav navbar-right panel_toolbox">
                  
-            <li><a data-toggle="modal" data-target="#squarespaceModal" class="butt5" ><i class="fa fa-plus"></i> Request Leave</a>
-                    <div class="clearfix"></div>
-                  </div>
-                      </li>
                     </ul>
+
                     <div class="clearfix"></div>
+
                     <div class="x_content">
+                       <br />
                     <p class="text-muted font-13 m-b-30">
                       Leave Details.
                     </p>

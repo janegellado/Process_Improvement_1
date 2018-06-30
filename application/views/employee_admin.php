@@ -17,62 +17,77 @@
         <div class="col-md-6" style="padding: 10px; text-align: center; margin-left: 450px;">
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-                     <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="name" id="inputSuccess2"  name="name"  id="name">
-                        <label class=" form-control-feedback left required" >Name</label>
-                      </div>
-            
-
-                      <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="employeeID" id="inputSuccess2"  name="employeeID"  id="employeeID" readonly="readonly">
-                        <label class=" form-control-feedback left required" >Employee ID</label>
-                      </div>
-					  
-					  
-                      <div class=" form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="pg_level" id="inputSuccess2" name="pg_level"  id="pg_level">
-                        <label class=" form-control-feedback left required" >PG Level</label>
-                      </div>
-		
-					            <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="bday" id="inputSuccess2" name="bday" id="bday">
-                        <label class=" form-control-feedback left required" >Birthdate</label>
+                     <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
                       </div>
 
-                       <div class="form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" for="date_hired" id="inputSuccess2"  name="name" id="name">
-                        <label class=" form-control-feedback left required" >Date Hired</label>
-                      </div>
-            
-					  
-					            <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="email" id="inputSuccess2"  name="email"  id="email">
-                        <label class=" form-control-feedback left required" >Email</label>
-                      </div>
-                      
-                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="position" id="inputSuccess2" name="position" id="position">
-                        <label class=" form-control-feedback left required" >Position</label>
-                      </div>
-            
-					             <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="cnum" id="inputSuccess2"  name="cnum"  id="cnum">
-                        <label class=" form-control-feedback left required" >Contact Number</label>
-                      </div>
-
-                       <div class="form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" for="promo_date" id="inputSuccess2" name="promo_date"  id="promo_date">
-                        <label class=" form-control-feedback left required" >Date of last promotion</label>
-                      </div>
-
-                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="civil_stat" id="inputSuccess2"  name="civil_stat"  id="civil_stat">
-                        <label class=" form-control-feedback left required" >Civil Status</label>
-                      </div>
-
-
-	                  
                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee ID</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">PG Level</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthdate</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Hired</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Position</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No.</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date of last promotion</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil Status</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group" style="margin-left: 25%;">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button class="btn btn-primary" type="reset">Reset</button>
                           <button type="submit" class="btn btn-success" value="submit">Submit</button>
@@ -116,67 +131,78 @@
   
   <?php echo form_open('process_improvement/addEmployee'); 
   ?> 
-                      <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="name" id="inputSuccess2"  name="name"  id="name">
-                        <label class=" form-control-feedback left required" >Name</label>
-                      </div>
-            
-
-                      <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="employeeID" id="inputSuccess2"  name="employeeID"  id="employeeID" readonly="readonly">
-                        <label class=" form-control-feedback left required" >Employee ID</label>
-                      </div>
-            
-            
-                      <div class=" form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="pg_level" id="inputSuccess2" name="pg_level"  id="pg_level">
-                        <label class=" form-control-feedback left required">PG Level</label>
-                      </div>
-    
-                      <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="bday" id="inputSuccess2" name="bday" id="bday">
-                        <label class=" form-control-feedback left required">Birthdate</label>
-                      </div>
-
-                       <div class="form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" for="date_hired" id="inputSuccess2"  name="name" id="name">
-                        <label class=" form-control-feedback left required">Date Hired</label>
-                      </div>
-            
-            
-                      <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="email" id="inputSuccess2"  name="email"  id="email">
-                        <label class=" form-control-feedback left required" >Email</label>
-                      </div>
-                      
-                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="position" id="inputSuccess2" name="position" id="position">
-                        <label class=" form-control-feedback left required" >Position</label>
-                      </div>
-            
-                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="cnum" id="inputSuccess2"  name="cnum"  id="cnum">
-                        <label class=" form-control-feedback left required" >Contact Number</label>
-                      </div>
-
-                       <div class="form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" for="promo_date" id="inputSuccess2" name="promo_date"  id="promo_date">
-                        <label class=" form-control-feedback left required" >Date of last promotion</label>
-                      </div>
-
-                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="civil_stat" id="inputSuccess2"  name="civil_stat"  id="civil_stat">
-                        <label class=" form-control-feedback left required" >Civil Status</label>
-                      </div>
-            
-                      <div class="checkbox" style="margin-left: 245px;">
-                            <label>
-                              <input type="checkbox" name="isAdmin" id="isAdmin" >Admin?
-                            </label>
-                          </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
                         </div>
                       </div>
-                    </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee ID</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">PG Level</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthdate</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Hired</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Position</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No.</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last Promotion</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil Status</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+            
+                  
+                   
+                    
 
              
       
@@ -190,7 +216,7 @@
   
    <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button" style="margin-left: 50px;"><a href="<?php echo base_url('process_improvement/listEmployee')?>" style="color: white;">Cancel</a></button>
+                          <button class="btn btn-primary" type="button" style="margin-left: 30%;"><a href="<?php echo base_url('process_improvement/listEmployee')?>" style="color: white;">Cancel</a></button>
                           
                           <button type="submit" class="btn btn-success" value="submit">Submit</button>
                         </div>
