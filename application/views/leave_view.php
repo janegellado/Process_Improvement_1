@@ -38,7 +38,7 @@
                       </div>
 
                       <div>&nbsp;</div>
-                      <label style="margin-left: -74%;">Inclusive Dates</label>
+                      <label style="margin-left: -74%;">INCLUSIVE DATES</label>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">From</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
@@ -53,17 +53,18 @@
                         </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group" style="margin-top: 20px;">
                   <label class="control-label col-md-6 col-sm-6 col-xs-12">No. of working days applied for: </label>
                 
                   <label class="control-label col-sm-2 col-xs-2" style="margin-left: -10%;">1</label>
                       </div>
 
                        <div>&nbsp;</div>
-                       <div style="border: ;">
-                       <label style="margin-left: -43%;">DETAILS OF ACTION APPLICATION</label>
+                          <div>&nbsp;</div>
+                       <div style="margin-top: -10px;">
+                       <label style="margin-left:-55%;margin-bottom: 3%;">DETAILS OF ACTION APPLICATION</label>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Recommendation</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" class="form-control" placeholder="Default Input">
                         </div>
@@ -90,7 +91,17 @@
                         </div>
                       </div>
 
-                      <div style="height: 300px;"></div>               
+                  <div style="height: 240px;"></div> 
+                      <div class="form-group">
+                        <label class="control-label col-md-5 col-sm-5 col-xs-12">ADM, DC/SUPERVISOR</label>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+
+
+
+                     <!--     -->          
   </form>
   </div>
                     <div class="form-group" style="margin-left: 18%;top: 260px; ">
