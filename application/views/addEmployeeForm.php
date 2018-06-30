@@ -76,13 +76,6 @@
                         <span class="fa fa-mobile form-control-feedback left required" aria-hidden="true"></span>
                       </div>
 					  
-					  
-                      <div class="checkbox">
-                            <label>
-                              <input type="checkbox" name="isAdmin" id="isAdmin" >Admin?
-                            </label>
-                          </div>
-					  
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button class="btn btn-primary" type="button"><a href="<?php echo base_url('process_improvement/viewSalesAgents')?>"style="color: white;">Cancel</a></button>
