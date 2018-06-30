@@ -8,6 +8,7 @@ class Process_Improvement extends CI_Controller {
 			$header_data['title'] = "LOG IN";
             $this->load->view('include/header',$header_data);
             $this->load->view('management_dashboard');
+             $this->load->view('include/footer');
     }
 
     public function viewEmployeeAdmin(){
