@@ -12,8 +12,9 @@
                     <div class="clearfix"></div>
                </div>
                   <div class="x_content">
+                    <div class="" style="width: 32%; height: 398px; border: 3px solid gray; position: absolute; margin-left: 10%; margin-top: 50px;"> </div>
                     <br />
-        <div class="col-md-6" style="padding: 10px; text-align: center; margin-left: 250px;">
+        <div class="col-md-6" style="padding: 10px; text-align: center; margin-left: 450px;">
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                      <div class="form-group has-feedback">
