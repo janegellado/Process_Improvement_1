@@ -7,17 +7,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Knoxville Auto Supply</title>
+    <title>MY 201</title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
     <!-- NProgress -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="<?php echo base_url('assets/css/vendors/iCheck/skins/flat/green.css'); ?>" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css'); ?>" rel="stylesheet">
+     <!-- bootstrap-wysiwyg -->
+    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url('assets/gentelella-master/build/css/custom.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/build/css/custom.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/build/css/custom.css'); ?>" rel="stylesheet">
+
+    <script src="<?php echo base_url('assets/js/multiple_selection.js'); ?>"></script>
+<script src="<?php echo base_url('assets/js/search.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/select.js'); ?>"></script>
   </head>
 
   <body class="nav-md">
@@ -26,19 +49,17 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-automobile"></i> <span>Knoxville</span></a>
+              <a href="<?php echo base_url('knoxville')?>" class="site_title"><i class="fa fa-user"></i> <span>MY 201</span></a>
             </div>
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
             <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="<?php echo base_url('assets/gentelella-master/production/images/admin.jpg'); ?>" alt="..." class="img-circle profile_img">
-              </div>
+              
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2>Admin</h2>
+                <h2>User</h2>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -51,30 +72,34 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
-                      <li><a href="index2.html">Dashboard2</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
-                    </ul>
+                  <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user"></i> PROFILE </a>
                   </li>
-                  <li><a href="<?php echo base_url('knoxville/viewSalesAgents')?>" class="navigation">Sales Agent Management</a>
+                  <li><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>"> <i class="fa fa-user-secret"></i>EMPLOYEE ADMIN</a>
                   </li>
-                  <li><a href="<?php echo base_url('knoxville/viewClients')?>" class="navigation">Client Management </a>
+                  <li><a href="<?php echo base_url('process_improvement')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
                    
                   </li>
-                  <li><a href="<?php echo base_url('knoxville/viewOrders')?>" class="navigation"> Sales Management</a>
-                    <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
-                    </ul>
+                  <li> <a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-clock-o"></i> OT </a>
+                  
                   </li>
-                  <li><a href="<?php echo base_url('knoxville/viewItems')?>" class="navigation">Inventory</a>
+                  <li><a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-info"></i>SUPERVISOR</a>
                     
                   </li>
-                  <li><a href="<?php echo base_url('knoxville/viewDeliverer')?>" class="navigation">Deliverer Management</a>
+          
+                  <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user"></i>MR</a>
                   </li>
-                </ul>
+          
+          <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user-secret"></i>MR ADMIN</a>
+                  </li>
+          
+          <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-book"></i>TRAINING</a>
+                  </li>
+          
+          <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user-secret"></i>TRAINING ADMIN</a>
+                  </li>
+          
+          
+                  
               </div>
               <div class="menu_section">
                 
@@ -96,7 +121,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url('login/logout'); ?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -114,89 +139,23 @@
 
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                    <img src="images/img.jpg" alt="">Welcome, User!
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    
+                    
+                    <li><a href="<?php echo base_url('knoxville/changepass'); ?>"><i class="fa fa-lock pull-right"></i> Change Password</a></li>
+                    <li><a href="<?php echo base_url('login/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
+                </nav>
                   </ul>
                 </li>
               </ul>
-            </nav>
+            
           </div>
         </div>
         <!-- /top navigation -->

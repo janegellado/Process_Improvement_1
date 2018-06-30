@@ -116,39 +116,57 @@
   <?php echo form_open('process_improvement/addEmployee'); 
   ?> 
                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" required="required" for="userID" id="inputSuccess2" placeholder="  User ID" name="userID" value="<?php echo date("y").'-002-'.str_pad($id, 3, '0', STR_PAD_LEFT) ?>" readonly="readonly">
-                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                        <input type="text" class="form-control has-feedback-left" for="name" id="inputSuccess2"  name="name"  id="name">
+                        <label class=" form-control-feedback left required" >Name</label>
+                      </div>
+            
+
+                      <div class="form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" for="employeeID" id="inputSuccess2"  name="employeeID"  id="employeeID" readonly="readonly">
+                        <label class=" form-control-feedback left required" >Employee ID</label>
+                      </div>
+            
+            
+                      <div class=" form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" for="pg_level" id="inputSuccess2" name="pg_level"  id="pg_level">
+                        <label class=" form-control-feedback left required" >PG Level</label>
                       </div>
     
                       <div class="form-group has-feedback">
-                        <input type="password" class="form-control has-feedback-left" required="required" for="pass" id="inputSuccess2" placeholder="  Password" name="pass" value="<?php echo set_value('pass'); ?>" id="pass">
-                        <span class="fa fa-lock form-control-feedback left" aria-hidden="true"></span>
+                        <input type="text" class="form-control has-feedback-left" for="bday" id="inputSuccess2" name="bday" id="bday">
+                        <label class=" form-control-feedback left required" >Birthdate</label>
                       </div>
 
-                      <div class=" form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left"  required="required"for="name" id="inputSuccess2" placeholder="  Name" name="name" value="<?php echo set_value('name'); ?>" id="name">
-                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                       <div class="form-group has-feedback">
+                        <input type="date" class="form-control has-feedback-left" for="date_hired" id="inputSuccess2"  name="name" id="name">
+                        <label class=" form-control-feedback left required" >Date Hired</label>
                       </div>
             
             
-                      <div class=" form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" required="required" for="bday" id="inputSuccess2" placeholder="  Birthdate" name="bday" value="<?php echo set_value('caddress'); ?>" id="bday">
-                        <span class="fa fa-birthday-cake form-control-feedback left" aria-hidden="true"></span>
+                      <div class="form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" for="email" id="inputSuccess2"  name="email"  id="email">
+                        <label class=" form-control-feedback left required" >Email</label>
                       </div>
-                    
-            
-                      <div class=" form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" required="required" for="email" id="inputSuccess2" placeholder="  Email" name="email" value="<?php echo set_value('email'); ?>" id="email">
-                        <span class="fa fa-at form-control-feedback left" aria-hidden="true"></span>
-                      </div>
-            
-            
-            
-                      <div class=" form-group has-feedback">
-                        <input type="number" class="form-control has-feedback-left" required="required" for="cnum" id="inputSuccess2" placeholder="  Contact Number" name="cnum" value="<?php echo set_value('cnum'); ?>" id="cnum">
-                        <span class="fa fa-mobile form-control-feedback left" aria-hidden="true"></span>
+                      
+                       <div class="form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" for="position" id="inputSuccess2" name="position" id="position">
+                        <label class=" form-control-feedback left required" >Position</label>
                       </div>
             
+                       <div class="form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" for="cnum" id="inputSuccess2"  name="cnum"  id="cnum">
+                        <label class=" form-control-feedback left required" >Contact Number</label>
+                      </div>
+
+                       <div class="form-group has-feedback">
+                        <input type="date" class="form-control has-feedback-left" for="promo_date" id="inputSuccess2" name="promo_date"  id="promo_date">
+                        <label class=" form-control-feedback left required" >Date of last promotion</label>
+                      </div>
+
+                       <div class="form-group has-feedback">
+                        <input type="text" class="form-control has-feedback-left" for="civil_stat" id="inputSuccess2"  name="civil_stat"  id="civil_stat">
+                        <label class=" form-control-feedback left required" >Civil Status</label>
+                      </div>
             
                       <div class="checkbox" style="margin-left: 245px;">
                             <label>
@@ -156,7 +174,9 @@
                             </label>
                           </div>
                         </div>
-                    
+                      </div>
+                    </div>
+
              
       
 
