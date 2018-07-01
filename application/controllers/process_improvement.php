@@ -40,7 +40,7 @@ class Process_Improvement extends CI_Controller {
        // if($this->form_validation->run()==FALSE){
             $header_data['title'] = "Add Employee";
             $this->load->view('include/header',$header_data);
-            $this->load->view('employee_admin');
+            $this->load->view('addEmployeeForm');
             $this->load->view('include/footer');
         //}
         //else{
@@ -54,6 +54,15 @@ class Process_Improvement extends CI_Controller {
        // }
     }
 
+    public function viewLeave(){
+     
+        $header_data['title'] = "Leave";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('leave_view');
+       	$this->load->view('include/footer');
+        
+        
+    }
 
         }
     

@@ -49,7 +49,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?php echo base_url('knoxville')?>" class="site_title"><i class="fa fa-user"></i> <span>MY 201</span></a>
+              <a href="<?php echo base_url('process_improvement')?>" class="site_title"><i class="fa fa-user"></i> <span>MY 201</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -76,7 +76,7 @@
                   </li>
                   <li><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>"> <i class="fa fa-user-secret"></i>EMPLOYEE ADMIN</a>
                   </li>
-                  <li><a href="<?php echo base_url('process_improvement')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
+                  <li><a href="<?php echo base_url('process_improvement/viewLeave')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
                    
                   </li>
                   <li> <a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-clock-o"></i> OT </a>
