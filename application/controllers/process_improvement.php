@@ -65,6 +65,17 @@ class Process_Improvement extends CI_Controller {
         
     }
 
+
+     public function viewOvertimeRegular(){
+     
+        $header_data['title'] = "Employee Admin";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('otregular_view');
+       $this->load->view('include/footer');
+        
+        
+    }
+
         }
     
      
