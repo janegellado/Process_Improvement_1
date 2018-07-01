@@ -6,125 +6,93 @@
                 <div class="x_panel">
                   <div class="x_title">
                       <h4>Overtime</h4>
-                        <!--start of modal-->
-                          <ul class="nav navbar-right panel_toolbox">
-                  
-                      <li><a data-toggle="modal" data-target="#squarespaceModal" class="butt5"><i class="fa fa-plus"></i> Add Employee </a>
-            
-              
 
-<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-      <h3 class="modal-title" id="lineModalLabel">Add Employee</h3>
-    </div>
-    <div class="modal-body">
-    <div>&nbsp;</div>
-  <div class="container">
-  <?php echo validation_errors(); ?>
-  
-  <?php echo form_open('process_improvement/addEmployee'); 
-  ?> 
+        <div class="col-md-12" style="top: 10px;padding: 10px; text-align: left; ">
+          <form id="demo-form2" data-parsley-validate class="form-horizontal form-inline">
+
+                     <div class="form-group" style=" width: 50%;">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Filed</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+                      </div>
+                      <div><br /></div>
                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee ID</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
-                        </div>
+                        <label class="">Authorized OT Time</label>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">PG Level</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">From: </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" class="form-control" placeholder="Default Input">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthdate</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Hired</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">To: </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <input type="text" class="form-control" placeholder="Default Input">
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Position</label>
+                      <div class="form-group" style="margin-left: 20px;">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">OT Rate</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control"style="width: 35%;" placeholder="Default Input">
+                        </div>
+                      </div>
+
+                       <div><br /></div>
+                       <div class="form-group">
+                        <label class="">Actual OT Time</label>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Start</label>
+                        <div class="">
+                          <input type="text" class="form-control" style="width: 50%;" placeholder="00:00">
+                        </div>
+                      </div>
+
+                      <div class="form-group" style="width: 25%;">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Finish</label>
+                        <div>
+                          <input type="text" class="form-control"  style="width: 35%;" placeholder="00">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No.</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Hour</label>
+                        <div class="">
+                          <input type="text" class="form-control"  style="width: 35%;" placeholder="00">
                         </div>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last Promotion</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Minute</label>
+                        <div class="">
+                          <input type="text" class="form-control"  style="width: 35%;" placeholder="00">
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil Status</label>
+                        <div><br /></div>
+                      <div class="form-group"  >
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tasked to be Accomplished</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Input Tasks">
                         </div>
                       </div>
-  
-  <div class="">
-    <label class="control-label col-sm-4">&nbsp;</label>
-  
-    </div>
-  
-   <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button" style="margin-left: 30%;"><a href="<?php echo base_url('process_improvement/listEmployee')?>" style="color: white;">Cancel</a></button>
-                          
-                          <button type="submit" class="btn btn-success" value="submit">Submit</button>
-                        </div>
-      </div>
-    
+ </form>
   </div>
-  </form>
-            </li>
-                    </ul>
-                       <p class="text-muted font-13 m-b-30"> Overtime Details</p>
-                      <div class="clearfix"></div>
-                   </div>
-                  <div class="x_content">
-                   
-     
-                  </div>
- 
-                </div>
-             </div>
+ </div>
+                  <div class="form-group pull-right" style="margin-right: 5%;">
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-success" type="reset">Add</button>
+                          <button type="submit" class="btn btn-success" value="submit">Clear</button>
+                        </div>
+</div>
 
-         </div>
+</div><!--end of first panel-->
 
 
 
@@ -138,31 +106,98 @@
                       </li>
                     </ul>
                     <div class="clearfix"></div>
-  <div class="x_content">
-                    <p class="text-muted font-13 m-b-30">
-                      Manage all the Employees here.</p>
-
+                <div class="x_content">
+                   
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
   
                     <tr id="trHead">
-            <th >Date of Filing</th>
-            <th colspan="2" scope='colgroup'>Authorized OT Time</th>
-            <th >Actual Time</th>
-            <th >OT Rate</th>
-            <th >Tasks to be Accomplished/Actual Accomplishments(Please attach additional sheets if necessary)</th>
-          </tr>
-           </thead>
+                      <th rowspan="3">Date of Filing</th>
+                      <th rowspan="3">Authorized OT Time</th>
+                      <th colspan="2">Actual Time</th>
+                      <th colspan="2">OT Rate</th>
+                      <th rowspan="3">Tasks to be Accomplished/Actual Accomplishments<br />(Please attach additional sheets if necessary)</th>
+                    </tr>
+
+
+                    <tr>
+                        <th rowspan="2">Start</th>
+                        <th rowspan="2">Finish</th>
+                        <th colspan="1">1.25</th>
+                        <th colspan="1">1.50</th>
+                     </tr>
+
+                     <tr>
+                        <th >Hours</th>
+                        <th >Minutes</th>
+                     </tr>
+
+                  </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+
+     <div class="col-md-6" style="padding: 10px; text-align: center;">
+          <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                  <div class="form-group">
+                     <label class="control-label col-md-3 col-sm-3 col-xs-12">AUTHORIZED BY: </label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input">
+                      </div>
+                  </div>
+
+                     </form>
+  </div>
+
+              <div style="float: right; margin-top: 10px;">
+                <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                <button type="submit" class="btn btn-success" value="submit">Clear</button>
+              </div>
+ </div>
+
+ <!--start of overtime history-->
+</div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h4>Overtime History</h4>
+                    <div class="clearfix"></div>
+                  </div>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                <div class="x_content">
+                    <table id="datatable" class="table table-striped table-bordered" style="width: 60%; margin-left: 200px;">
+                <thead>
+  
+                    <tr id="trHead">
+                      <th >Date of Filing</th>
+                      <th >Status</th>
+                      <th >Remarks</th>
+                      <th >Action</th>
+                     </tr>
+               </thead>
+
         <tbody>
-           <tr>
-              <th scope='col'>Start</th>
-              <th scope='col'>Finish</th>
-           </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><a href="" class="btn btn-success btn-xs"><i class="fa fa-eye"></i> View</a><a href="" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a></td>
+        </tr>
         </tbody>
     </table>
+                    
+     
+</div>
+</div>
 
 
-    </div>
+
 
 
  
