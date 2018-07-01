@@ -1,10 +1,10 @@
 <?php
 
-class Client_model extends CI_Model {
-    private $table = 'client';
+class OT_model extends CI_Model {
+    private $table = 'ot';
     
-    function create($clientRecord){
-        $this->db->insert($this->table, $clientRecord);
+    function create($otRecord){
+        $this->db->insert($this->table, $otRecord);
     }
     
     function read($condition=null){
@@ -20,8 +20,7 @@ class Client_model extends CI_Model {
             return $query->result_array();
         else
             return false;
-        
-    }
+          }
     
     function update($newRecord){
         $this->db->replace($this->table,$newRecord);
