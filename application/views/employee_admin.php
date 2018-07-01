@@ -130,17 +130,17 @@
             
                       <div class=" form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left" for="pg_level" id="inputSuccess2" name="pg_level"  id="pg_level">
-                        <label class=" form-control-feedback left required" >PG Level</label>
+                        <label class=" form-control-feedback left required">PG Level</label>
                       </div>
     
                       <div class="form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left" for="bday" id="inputSuccess2" name="bday" id="bday">
-                        <label class=" form-control-feedback left required" >Birthdate</label>
+                        <label class=" form-control-feedback left required">Birthdate</label>
                       </div>
 
                        <div class="form-group has-feedback">
                         <input type="date" class="form-control has-feedback-left" for="date_hired" id="inputSuccess2"  name="name" id="name">
-                        <label class=" form-control-feedback left required" >Date Hired</label>
+                        <label class=" form-control-feedback left required">Date Hired</label>
                       </div>
             
             

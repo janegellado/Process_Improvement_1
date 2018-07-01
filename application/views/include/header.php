@@ -10,19 +10,19 @@
     <title>My 201</title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
     <!-- NProgress -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
     <!-- iCheck -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/iCheck/skins/flat/green.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/iCheck/skins/flat/green.css'); ?>" rel="stylesheet">
     <!-- Datatables -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css'); ?>" rel="stylesheet">
      <!-- bootstrap-wysiwyg -->
     <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
     <!-- Select2 -->
@@ -35,8 +35,8 @@
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url('assets/gentelella-master/build/css/custom.min.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/gentelella-master/build/css/custom.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/build/css/custom.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/build/css/custom.css'); ?>" rel="stylesheet">
 
     <script src="<?php echo base_url('assets/js/multiple_selection.js'); ?>"></script>
 <script src="<?php echo base_url('assets/js/search.js'); ?>"></script>
@@ -75,11 +75,11 @@
               <div class="menu_section" style="margin-top: -15%;">
                 <ul class="nav side-menu">
                   
-                  <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user"></i> PROFILE </a>
+                  <li><a href="<?php echo base_url('process_improvement/index')?>"> <i class="fa fa-user"></i> PROFILE </a>
                   </li>
                   <li><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>"> <i class="fa fa-user-secret"></i>EMPLOYEE ADMIN</a>
                   </li>
-                  <li><a href="<?php echo base_url('process_improvement')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
+                  <li><a href="<?php echo base_url('process_improvement/viewLeave')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
                    
                   </li>
                   <li> <a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-clock-o"></i> OT </a>
