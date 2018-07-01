@@ -58,11 +58,12 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
                 <div class="profile_pic">
-                  <!-- supposed to be profile picture-->
+                  <img src="<?php echo base_url('assets/css/build/images/sampleuser.png'); ?>" alt="..." class="img-circle profile_img">
                 </div>
 
                 <div class="profile_info">
-                  <span><h2>Welcome, <caption>Employee</caption></h2> </span>
+                 <span>Welcome,</span>
+                <h2>Employee</h2>
                 </div>
                 <div class="clearfix"></div>
             </div>
