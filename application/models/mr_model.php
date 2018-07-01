@@ -1,9 +1,10 @@
 <?php
-class Shipment_model extends CI_Model {
-    private $table = 'shipment';
+
+class MR_model extends CI_Model {
+    private $table = 'mr';
     
-    function create($delivererRecord){
-        $this->db->insert($this->table, $delivererRecord);
+    function create($mrRecord){
+        $this->db->insert($this->table, $mrRecord);
     }
     
     function read($condition=null){
@@ -19,8 +20,7 @@ class Shipment_model extends CI_Model {
             return $query->result_array();
         else
             return false;
-        
-    }
+          }
     
     function update($newRecord){
         $this->db->replace($this->table,$newRecord);
@@ -29,14 +29,12 @@ class Shipment_model extends CI_Model {
     function del($where_array){
         $this->db->delete($this->table,$where_array);
     }
-	
-	function getLastRecordID(){
-        $this->db->select_max('shipID');
-        $query = $this->db->get($this->table,1);
-        $lastID = $query->row_array();
-        $lastID = $lastID['shipID'];
-        
-        return $lastID;
+
+    function count(){
+    $this->db->select('*');
+    $this->db->from($this->table);
+    $query = $this->db->get();
+    return $query->num_rows();
     }
 }
 ?>

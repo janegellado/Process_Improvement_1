@@ -1,15 +1,15 @@
 <?php
-class Transaction_model extends CI_Model {
-    private $table = 'transaction';
+
+class Training_model extends CI_Model {
+    private $table = 'training';
     
-    function create($transRecord){
-        $this->db->insert($this->table, $transRecord);
+    function create($trainingRecord){
+        $this->db->insert($this->table, $trainingRecord);
     }
     
     function read($condition=null){
         $this->db->select('*');
         $this->db->from($this->table);
-        $this->db->order_by('date','desc');
         
         if(isset($condition))
             $this->db->where($condition);
@@ -20,16 +20,21 @@ class Transaction_model extends CI_Model {
             return $query->result_array();
         else
             return false;
-        
-    }
+          }
     
-    function update($newRecord, $transID){
-        $this->db->where('transID', $transID);
-        $this->db->update($this->table,$newRecord);
+    function update($newRecord){
+        $this->db->replace($this->table,$newRecord);
     }
     
     function del($where_array){
         $this->db->delete($this->table,$where_array);
+    }
+
+    function count(){
+    $this->db->select('*');
+    $this->db->from($this->table);
+    $query = $this->db->get();
+    return $query->num_rows();
     }
 }
 ?>

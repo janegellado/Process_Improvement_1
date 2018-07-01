@@ -1,10 +1,10 @@
 <?php
 
-class Sales_agent_model extends CI_Model {
-    private $table = 'sales_agent';
+class Leavedb_model extends CI_Model {
+    private $table = 'leavedb';
     
-    function create($clientRecord){
-        $this->db->insert($this->table, $clientRecord);
+    function create($leaveRecord){
+        $this->db->insert($this->table, $leaveRecord);
     }
     
     function read($condition=null){
@@ -20,8 +20,7 @@ class Sales_agent_model extends CI_Model {
             return $query->result_array();
         else
             return false;
-        
-    }
+          }
     
     function update($newRecord){
         $this->db->replace($this->table,$newRecord);
@@ -32,7 +31,9 @@ class Sales_agent_model extends CI_Model {
     }
 
     function count(){
-    $query = $this->db->query('SELECT * FROM sales_agent');
+    $this->db->select('*');
+    $this->db->from($this->table);
+    $query = $this->db->get();
     return $query->num_rows();
     }
 }
