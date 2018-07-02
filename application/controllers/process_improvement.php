@@ -100,7 +100,7 @@ class Process_Improvement extends CI_Controller {
         
     }
 
-<<<<<<< HEAD
+
     public function updateTraining(){
         
             $title['title']="Update Training Attended";
@@ -109,18 +109,6 @@ class Process_Improvement extends CI_Controller {
             $this->load->view('include/footer');
         
     }
-
-    public function viewOT(){
-     
-        $header_data['title'] = "Over Time";
-        $this->load->view('include/header',$header_data);
-        $this->load->view('OT_view');
-        $this->load->view('include/footer');
-        
-    }
-
-
-=======
 
      public function viewOvertimeRegular(){
      
@@ -131,8 +119,16 @@ class Process_Improvement extends CI_Controller {
         
         
     }
+    public function viewMR(){
+     
+        $header_data['title'] = "MR";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('mr_view');
+        $this->load->view('include/footer');
+        
+    }
 
->>>>>>> 89473d872a33edc25a8117229cd4494fc28ec7f3
+
         }
     
      

@@ -75,7 +75,7 @@
               <div class="menu_section" style="margin-top: -15%;">
                 <ul class="nav side-menu">
                   
-                  <li><a href="<?php echo base_url('process_improvement/index')?>"> <i class="fa fa-user"></i> PROFILE </a>
+                  <li><a href="<?php echo base_url('process_improvement/')?>"> <i class="fa fa-user"></i> PROFILE </a>
                   </li>
                   <li><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>"> <i class="fa fa-user-secret"></i>EMPLOYEE ADMIN</a>
                   </li>
@@ -89,7 +89,7 @@
                     
                   </li>
           
-                  <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user"></i>MR</a>
+                  <li><a href="<?php echo base_url('process_improvement/viewMR')?>"> <i class="fa fa-user"></i>MR</a>
                   </li>
           
                   <li>
