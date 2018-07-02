@@ -20,7 +20,7 @@
                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" >
                         </div>
                       </div>
 
@@ -134,69 +134,69 @@
                        <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('employee_name')?>">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee ID</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('employeeID')?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">PG Level</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('pg_level')?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthdate</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input">
+                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('bday')?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Hired</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input">
+                          <input type="date" class="form-control" placeholder="value="<?php echo set_value('date_hired')?>"">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('email')?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Position</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('position')?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No.</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('cp_no')?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Last Promotion</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input">
+                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('promo_date')?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil Status</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('civil_stat')?>">
                         </div>
                       </div>
             
@@ -216,7 +216,7 @@
   
    <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button" style="margin-left: 30%;"><a href="<?php echo base_url('process_improvement/listEmployee')?>" style="color: white;">Cancel</a></button>
+                          <button class="btn btn-primary" type="button" style="margin-left: 30%;"><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>" style="color: white;">Cancel</a></button>
                           
                           <button type="submit" class="btn btn-success" value="submit">Submit</button>
                         </div>

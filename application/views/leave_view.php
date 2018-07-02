@@ -33,7 +33,12 @@
                       <div class="form-group col">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Type of Leave</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                          <select class="form-control">
+                            <option>Vacation Leave (Local)</option>
+                            <option>Vacation Leave (International)</option>
+                            <option>Sick Leave</option>
+                            <option>Special Leave Priveledge</option>
+                          </select>
                         </div>
                       </div>
 

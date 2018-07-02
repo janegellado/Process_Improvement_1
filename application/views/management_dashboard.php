@@ -29,7 +29,7 @@
     
            <tr id="trHead">
             <th style="width: 35%;" scope="row">NAME</th>
-            <td>sample name</td>
+            <td> <?php echo $employee_name ?></td>
           </tr>
         
           <tr id="trHead">

@@ -58,11 +58,12 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
                 <div class="profile_pic">
-                  <!-- supposed to be profile picture-->
+                  <img src="<?php echo base_url('assets/css/build/images/sampleuser.png'); ?>" alt="..." class="img-circle profile_img">
                 </div>
 
                 <div class="profile_info">
-                  <span><h2>Welcome, <caption>Employee</caption></h2> </span>
+                 <span>Welcome,</span>
+                <h2>Employee</h2>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -75,25 +76,25 @@
               <div class="menu_section" style="margin-top: -15%;">
                 <ul class="nav side-menu">
                   
-                  <li><a href="<?php echo base_url('process_improvement/index')?>"> <i class="fa fa-user"></i> PROFILE </a>
+                  <li><a href="<?php echo base_url('process_improvement/')?>"> <i class="fa fa-user"></i> PROFILE </a>
                   </li>
                   <li><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>"> <i class="fa fa-user-secret"></i>EMPLOYEE ADMIN</a>
                   </li>
                   <li><a href="<?php echo base_url('process_improvement/viewLeave')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
                    
                   </li>
-                  <li> <a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-clock-o"></i> OT </a>
+                  <li> <a href="<?php echo base_url('process_improvement/viewOvertimeRegular')?>"><i class="fa fa-clock-o"></i> OT </a>
                   
                   </li>
                   <li><a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-info"></i>SUPERVISOR</a>
                     
                   </li>
           
-                  <li><a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user"></i>MR</a>
+                  <li><a href="<?php echo base_url('process_improvement/viewMR')?>"> <i class="fa fa-user"></i>MR</a>
                   </li>
           
                   <li>
-                  <a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user-secret"></i>MR ADMIN</a>
+                  <a href="<?php echo base_url('process_improvement/viewProperties')?>"> <i class="fa fa-user-secret"></i>MR ADMIN</a>
                   </li>
                 
                   <li>
