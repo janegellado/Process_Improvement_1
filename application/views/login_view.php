@@ -55,7 +55,7 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-automobile"></i> &nbsp;Retail Banking Systems Department<h1>
+                  <h2><i class="fa fa-bank"></i> &nbsp;Retail Banking Systems Department</h2>
                   <p>©2018 All Rights Reserved. Privacy and Terms</p>
                 </div>
               </div>
