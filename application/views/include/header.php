@@ -82,7 +82,7 @@
                   <li><a href="<?php echo base_url('process_improvement/viewLeave')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
                    
                   </li>
-                  <li> <a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-clock-o"></i> OT </a>
+                  <li> <a href="<?php echo base_url('process_improvement/viewOvertimeRegular')?>"><i class="fa fa-clock-o"></i> OT </a>
                   
                   </li>
                   <li><a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-info"></i>SUPERVISOR</a>
