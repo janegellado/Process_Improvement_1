@@ -6,24 +6,26 @@ class Process_Improvement extends CI_Controller {
         parent::__construct();
         $this->load->model('Employee_model','employee');
         $this->load->model('Leavedb_model','leavedb');
-		$this->load->model('MR_model','mr');
-		$this->load->model('OT_model','ot');
-		$this->load->model('Training_model','training');
-		$this->load->model('Trainingsched_model','trainingsched');
-		
-		
+		    $this->load->model('MR_model','mr');
+		    $this->load->model('OT_model','ot');
+		    $this->load->model('Training_model','training');
+		    $this->load->model('Trainingsched_model','trainingsched');
+
     }
 
     public function index()
     {			
-			$header_data['title'] = "LOG IN";
+      if($this->session->userdata('username')){
+            $session_data=$this->session->userdata('logged_in');
+            $data['userID']=$this->session->userdata('username');
+			       $header_data['title'] = "LOG IN";
             $this->load->view('include/header',$header_data);
             $this->load->view('management_dashboard');
-             $this->load->view('include/footer');
+            $this->load->view('include/footer');
+      }
     }
-
     public function viewEmployeeAdmin(){
-     
+        
         $header_data['title'] = "Employee Admin";
         $this->load->view('include/header',$header_data);
         $this->load->view('employee_admin');
@@ -36,34 +38,32 @@ class Process_Improvement extends CI_Controller {
         //load the view
         //get form data
         //add to db
-        //$rules = array(
-                   // array('field'=>'employeeID', 'label'=>'Employee ID', 'rules'=>'required'),
-                   // array('field'=>'name', 'label'=>'Name', 'rules'=>'required'),
-                   // array('field'=>'bday', 'label'=>'Birthdate', 'rules'=>'required'),
-                   // array('field'=>'date_hired', 'label'=>'Date Hired', 'rules'=>'required'),
-                   // array('field'=>'position', 'label'=>'Position', 'rules'=>'required'),
-                   // array('field'=>'pg_level', 'label'=>'PG Level', 'rules'=>'required'),
-                    //array('field'=>'promo_date', 'label'=>'Date of last promotion', 'rules'=>'required'),
-                    //array('field'=>'civil_stat', 'label'=>'Civil Status', 'rules'=>'required'),
-                   // array('field'=>'cp_no', 'label'=>'Contact No.', 'rules'=>'required')
-                    //array('field'=>'isAdmin', 'label'=>'Admin?', 'rules'=>'required'),
-               // );
-       // $this->form_validation->set_rules($rules);
-       // if($this->form_validation->run()==FALSE){
+        $rules = array(
+                   array('field'=>'name', 'label'=>'Name', 'rules'=>'required'),
+                   array('field'=>'employeeID', 'label'=>'Employee ID', 'rules'=>'required'),
+                   array('field'=>'bday', 'label'=>'Birthdate', 'rules'=>'required'),
+                   array('field'=>'date_hired', 'label'=>'Date Hired', 'rules'=>'required'),
+                   array('field'=>'position', 'label'=>'Position', 'rules'=>'required'),
+                   array('field'=>'pg_level', 'label'=>'PG Level', 'rules'=>'required'),
+                   array('field'=>'promo_date', 'label'=>'Date of last promotion', 'rules'=>'required'),
+                   array('field'=>'civil_stat', 'label'=>'Civil Status', 'rules'=>'required'),
+                   array('field'=>'cp_no', 'label'=>'Contact No', 'rules'=>'required')
+                );
+                 $this->form_validation->set_rules($rules);
+        if($this->form_validation->run()==FALSE){
             $header_data['title'] = "Add Employee";
             $this->load->view('include/header',$header_data);
-            $this->load->view('addEmployeeForm');
+            $this->load->view('viewEmployeeAdmin');
             $this->load->view('include/footer');
-        //}
-        //else{
-           // if(isset($_POST['isAdmin']))
-               // $isAdmin=1;
-           // else
-              //  $isAdmin=0;
-          //  $salesAgentRecord=array('userID'=>$_POST['userID'],'password'=>password_hash($_POST['pass'],PASSWORD_BCRYPT),'fullname'=>$_POST['name'],'birthdate'=>$_POST['bday'],'email'=>$_POST['email'],'contact_no'=>$_POST['cnum'],'isAdmin'=>$isAdmin);
-           // $this->SalesAgent->create($salesAgentRecord);
-           // redirect('knoxville/viewSalesAgents');
-       // }
+        }
+       else{
+          
+            $employeeRecord=array('employeeID'=>$_POST['employeeID']
+            //'password'=>password_hash($_POST['pass'],PASSWORD_BCRYPT)
+              ,'fullname'=>$_POST['employee_name'],'birthdate'=>$_POST['bday'],'date hired'=>$_POST['date_hired'],'position'=>$_POST['position'],'pg level'=>$_POST['pg_level'],'date of last promotion'=>$_POST['promo_date'],'civil status'=>$_POST['civil_stat'],'contact no'=>$_POST['cp_no'],'isAdmin'=>$isAdmin);
+            $this->employee->create($employeeRecord);
+            redirect('process_improvement/viewEmployeeAdmin');
+        }
     }
 
     public function updateEmployee(){

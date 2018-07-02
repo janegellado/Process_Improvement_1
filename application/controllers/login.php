@@ -12,23 +12,22 @@ class Login extends CI_Controller {
             $this->load->view('login_view');
         }
         else {
-            if($this->session->userdata('isAdmin')>0){
-                 redirect(base_url('knoxville'));
-            }
+            
+                 redirect(base_url('process_improvement'));
+            
         }
 	}
     
     public function verifyLogin($password) {
         $username = $this->input->post('username');
         
-        $condition = array('userID'=>$username, 'password'=>$password);
-        $this->load->model('sales_agent_model','Sales_agent');
-        $result_array = $this->Sales_agent->read($condition);
+        $condition = array('username'=>$username, 'password'=>$password);
+        $this->load->model('employee_model','Employee');
+        $result_array = $this->Employee->read($condition);
         
         if($result_array){
             foreach($result_array as $row){
-                $this->session->set_userdata('userID', $row['userID']);
-                $this->session->set_userdata('isAdmin', $row['isAdmin']);
+                $this->session->set_userdata('username', $row['username']);
                 /*$sess_data=array(
                     'userID' => $row['userID'],
                     'isAdmin' => $row['isAdmin']

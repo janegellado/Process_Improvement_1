@@ -7,19 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Knoxville Auto Supply </title>
+    <title>Retail Banking Systems Departmet </title>
 
     <!-- Bootstrap -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/bootstrap/dist/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/font-awesome/css/font-awesome.min.css'); ?>" rel="stylesheet">
     <!-- NProgress -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/nprogress/nprogress.css'); ?>" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="<?php echo base_url('assets/gentelella-master/vendors/animate.css/animate.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/vendors/animate.css/animate.min.css'); ?>" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="<?php echo base_url('assets/gentelella-master/build/css/custom.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/css/build/css/custom.min.css'); ?>" rel="stylesheet">
   </head>
 
   <body class="login">
@@ -30,15 +30,14 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <?php echo form_open('','class="form-signin"'); //this is equal to <form method="post" accept-charset="utf-8" action="http://localhost/Knoxville-Auto-Supply/">
-                                     //to add attributes, edit to: echo form('','class="lala" id="lala"'); 
+            <?php echo form_open('','class="form-signin"');
             ?>
               <h1>Login Form</h1>
               <div>
                 <input type="text" class="form-control" placeholder="Username" name="username" id="user required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" name="password" id="pass" required="" />
+                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="" />
               </div>
               <div>
                 <input class="btn btn-default submit" type="submit" value="Log In" />
@@ -56,7 +55,7 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-automobile"></i> &nbsp;Knoxville Auto Supply</h1>
+                  <h1><i class="fa fa-automobile"></i> &nbsp;Retail Banking Systems Department<h1>
                   <p>©2018 All Rights Reserved. Privacy and Terms</p>
                 </div>
               </div>
@@ -91,10 +90,7 @@
                 <div class="clearfix"></div>
                 <br />
 
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                </div>
+                
               </div>
             </form>
           </section>

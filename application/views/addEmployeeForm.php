@@ -39,27 +39,21 @@
                </div>
                   <div class="x_content">
                     <br />
-<div class="col-md-6" style="padding: 10px; text-align: center; margin-left: 250px;">
+        <div class="col-md-6" style="padding: 10px; text-align: center; margin-left: 250px;">
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="userID" id="inputSuccess2" placeholder="  User ID" name="userID" value="<?php echo set_value('userID'); ?>" id="userID">
-                        <span class="fa fa-user form-control-feedback left required" aria-hidden="true"></span>
+                        <input type="text" class="form-control has-feedback-left" for="employeeID" id="inputSuccess2" placeholder="Employee ID" name="employeeID" value="<?php echo set_value('employeeID'); ?>" id="employeeID">
+                        <span class="fa fa-id form-control-feedback left required" aria-hidden="true"></span>
                       </div>
 		
                       <div class="form-group has-feedback">
-                        <input type="password" class="form-control has-feedback-left" for="pass" id="inputSuccess2" placeholder="  Password" name="pass" value="<?php echo set_value('pass'); ?>" id="pass">
-                        <span class="fa fa-lock form-control-feedback left required" aria-hidden="true"></span>
+                        <input type="text" class="form-control has-feedback-left" for="employee_name" id="inputSuccess2" placeholder="Employee Name" name="employee_name" value="<?php echo set_value('employee_name'); ?>" id="employee_name">
+                        <span class="fa fa-user form-control-feedback left required" aria-hidden="true"></span>
                       </div>
 
                       <div class=" form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="name" id="inputSuccess2" placeholder="  Name" name="name" value="<?php echo set_value('name'); ?>" id="name">
-                        <span class="fa fa-user form-control-feedback left required" aria-hidden="true"></span>
-                      </div>
-					  
-					  
-                      <div class=" form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" for="bday" id="inputSuccess2" placeholder="  Birthdate" name="bday" value="<?php echo set_value('caddress'); ?>" id="bday">
+                        <input type="date" class="form-control has-feedback-left" for="bday" id="inputSuccess2" placeholder="Birthdate" name="bday" value="<?php echo set_value('bday'); ?>" id="bday">
                         <span class="fa fa-birthday-cake form-control-feedback left required" aria-hidden="true"></span>
                       </div>
 	                  
