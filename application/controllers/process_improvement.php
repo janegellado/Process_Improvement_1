@@ -88,7 +88,7 @@ class Process_Improvement extends CI_Controller {
      
         $header_data['title'] = "Property Assigned";
         $this->load->view('include/header',$header_data);
-        $this->load->view('property_view');
+        $this->load->view('mradmin_view');
         $this->load->view('include/footer');
         
     }

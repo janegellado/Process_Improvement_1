@@ -93,7 +93,7 @@
                   </li>
           
                   <li>
-                  <a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user-secret"></i>MR ADMIN</a>
+                  <a href="<?php echo base_url('process_improvement/viewProperties')?>"> <i class="fa fa-user-secret"></i>MR ADMIN</a>
                   </li>
                 
                   <li>
