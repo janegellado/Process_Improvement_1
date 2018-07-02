@@ -55,6 +55,15 @@ class Process_Improvement extends CI_Controller {
        // }
     }
 
+    public function updateEmployee(){
+        
+            $title['title']="Update Employee";
+            $this->load->view('include/header',$title);
+            $this->load->view('updateEmployeeForm',$data);
+            $this->load->view('include/footer');
+        
+    }
+
     public function viewLeave(){
      
         $header_data['title'] = "Leave";
@@ -62,8 +71,53 @@ class Process_Improvement extends CI_Controller {
         $this->load->view('leave_view');
        	$this->load->view('include/footer');
         
+    }
+
+    public function viewProperties(){
+     
+        $header_data['title'] = "Property Assigned";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('property_view');
+        $this->load->view('include/footer');
         
     }
+
+    public function updateProperties(){
+        
+            $title['title']="Update Property Assigned";
+            $this->load->view('include/header',$title);
+            $this->load->view('updatePropertyForm',$data);
+            $this->load->view('include/footer');
+        
+    }
+
+    public function viewTraining(){
+     
+        $header_data['title'] = "Training Attended";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('training_view');
+        $this->load->view('include/footer');
+        
+    }
+
+    public function updateTraining(){
+        
+            $title['title']="Update Training Attended";
+            $this->load->view('include/header',$title);
+            $this->load->view('updateTrainingForm',$data);
+            $this->load->view('include/footer');
+        
+    }
+
+    public function viewOT(){
+     
+        $header_data['title'] = "Over Time";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('OT_view');
+        $this->load->view('include/footer');
+        
+    }
+
 
         }
     
