@@ -26,61 +26,75 @@
                       <div class="" style="width: 32%; height: 398px; border: 3px solid gray; position: absolute; margin-left: 3%;"> </div>
                      <table  class="table table-striped table-bordered" style="width: 60%; align: center; margin-left: 37%;">
                       <thead > 
-    
+          <?php 
+          foreach($employees_d as $d)
+            {
+              $name = $employees_d['employee_name'];
+              $id=$employees_d['employeeID'];
+              $birthday=$employees_d['birthday'];
+              $dh=$employees_d['date_hired'];
+              $pos=$employees_d['position'];
+              $cs=$employees_d['civil_stat'];
+              $pd=$employees_d['promo_date'];
+              $pl=$employees_d['pg_level'];
+              $cn=$employees_d['cp_no'];
+              $ea=$employees_d['email'];
+            }
+          ?>
            <tr id="trHead">
             <th style="width: 35%;" scope="row">NAME</th>
-            <td> <?php echo $employee_name ?></td>
+            <td> <?php print_r($name)?></td>
           </tr>
         
           <tr id="trHead">
             <th scope="row">EMPLOYEE ID NO </th>
-            <td>sample name</td>
+            <td><?php print_r($id)?></td>
           </tr>
           
           <tr id="trHead">
             <th >BIRTHDAY</th>
-            <td>sample name</td>
+            <td><?php print_r($birthday)?></td>
         
           </tr>
           
           <tr id="trHead">
             <th >DATE HIRED</th>
-            <td>sample name</td>
+            <td><?php print_r($dh)?></td>
           </tr>
           
           <tr id="trHead">
             <th >POSITION</th>
-            <td>sample name</td>
+            <td><?php print_r($pos)?></td>
           </tr>
           
           <tr id="trHead">
             <th >DATE OF LAST PROMOTION</th>
-            <td>sample name</td>
+            <td><?php print_r($pd)?></td>
           </tr>
           
           <tr id="trHead">
             <th >CIVIL STATUS</th>
-            <td>sample name</td>
+            <td><?php print_r($cs)?></td>
           </tr>
           
           <tr id="trHead">
             <th >PG LEVEL</th>
-            <td>sample name</td>
+            <td><?php print_r($pl)?></td>
           </tr>
           
           <tr id="trHead">
             <th >OFFICE</th>
-            <td>sample name</td>
+            <td><?php echo 'N/A'?></td>
           </tr>
           
           <tr id="trHead">
             <th >CELLPHONE NUMBER</th>
-            <td>sample name</td>
+            <td><?php print_r($cn)?></td>
           </tr>
           
           <tr id="trHead">
             <th >EMAIL ADDRESS</th>
-            <td>sample name</td>
+            <td><?php print_r($ea)?></td>
           </tr>
           
         </thead>

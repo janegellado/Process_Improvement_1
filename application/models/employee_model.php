@@ -7,7 +7,7 @@ class Employee_model extends CI_Model {
         $this->db->insert($this->table, $employeeRecord);
     }
     
-    function read($condition=null){
+    function read(){
         $this->db->select('*');
         $this->db->from($this->table);
         
@@ -15,13 +15,14 @@ class Employee_model extends CI_Model {
             $this->db->where($condition);
         
         $query = $this->db->get();
+
         
         if($query->num_rows()>0)
             return $query->result_array();
         else
             return false;
           }
-    
+
     function update($newRecord){
         $this->db->replace($this->table,$newRecord);
     }
@@ -34,7 +35,9 @@ class Employee_model extends CI_Model {
     $this->db->select('*');
     $this->db->from($this->table);
     $query = $this->db->get();
+    $query = $this->db->query('SELECT * FROM employee');
     return $query->num_rows();
+
     }
 }
 ?>

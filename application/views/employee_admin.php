@@ -199,14 +199,7 @@
                           <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('civil_stat')?>">
                         </div>
                       </div>
-            
-                  
-                   
-                    
-
-             
       
-
     
   
   <div class="">

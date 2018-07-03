@@ -2,7 +2,7 @@
     <div class="container body">
       <div class="main_container">
 
-<div class="right_col" role="main">
+      <div class="right_col" role="main">
           <div class="">
     
           <div class="clearfix"></div>
@@ -69,7 +69,7 @@
                           </div>
                         </div>
                       </form>               
-          
+        
 
 
  <!--right side-->  
@@ -100,12 +100,12 @@
           </form>
         </div>
       </div>
+</div>
+</div>
+
 
         
-                    
-                     </div>
-                   </div>
-                 </div>
+                  
 
 
     <div class="clearfix"></div>

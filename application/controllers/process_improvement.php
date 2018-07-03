@@ -18,9 +18,26 @@ class Process_Improvement extends CI_Controller {
       if($this->session->userdata('username')){
             $session_data=$this->session->userdata('logged_in');
             $data['userID']=$this->session->userdata('username');
-			       $header_data['title'] = "LOG IN";
+			      $header_data['title'] = "LOG IN";
+            $employee_data = $this->employee->read();
+            foreach($employee_data as $ed)
+            {
+            $hold = array(
+                'employeeID' => $ed['employeeID'],
+                'employee_name' => $ed['employee_name'],
+                'pg_level' => $ed['pg_level'],
+                'birthday' => $ed['birthday'],
+                'date_hired' => $ed['date_hired'],
+                'position' => $ed['position'],
+                'promo_date'=>$ed['promo_date'],
+                'email' => $ed['email'],
+                'civil_stat' => $ed['civil_stat'],
+                'cp_no' => $ed['cp_no'],                                                
+                );
+            $data['employees_d']=$hold;
+            }
             $this->load->view('include/header',$header_data);
-            $this->load->view('management_dashboard');
+            $this->load->view('management_dashboard', $data);
             $this->load->view('include/footer');
       }
     }
