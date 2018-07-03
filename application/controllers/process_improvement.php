@@ -4,12 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Process_Improvement extends CI_Controller {
 	public function __construct(){
         parent::__construct();
-        $this->load->model('Employee_model','employee');
-        $this->load->model('Leavedb_model','leavedb');
-		    $this->load->model('MR_model','mr');
-		    $this->load->model('OT_model','ot');
-		    $this->load->model('Training_model','training');
-		    $this->load->model('Trainingsched_model','trainingsched');
+
+        $this->load->model('employee_model','employee');
+        $this->load->model('leavedb_model','leavedb');
+		$this->load->model('mr_model','mr');
+		$this->load->model('ot_model','ot');
+		$this->load->model('training_model','training');
+		$this->load->model('trainingsched_model','trainingsched');
+		
 
     }
 
