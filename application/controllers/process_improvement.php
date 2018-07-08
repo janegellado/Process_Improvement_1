@@ -149,6 +149,17 @@ class Process_Improvement extends CI_Controller {
         
         
     }
+
+
+     public function viewOvertimeContractual(){
+     
+        $header_data['title'] = "Employee Admin";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('otcontractual_view');
+       $this->load->view('include/footer');
+        
+        
+    }
     public function viewMR(){
      
         $header_data['title'] = "MR";
@@ -157,6 +168,18 @@ class Process_Improvement extends CI_Controller {
         $this->load->view('include/footer');
         
     }
+
+
+    public function viewSVLeave(){
+     
+        $header_data['title'] = "Supervisor's Leave";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('sv_leave');
+        $this->load->view('include/footer');
+        
+    }
+
+   
 
 
         }
