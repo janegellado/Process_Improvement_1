@@ -112,27 +112,33 @@
                       <thead>
   
                     <tr id="trHead">
-                      <th rowspan="3">Date of Filing</th>
-                      <th rowspan="3">Authorized OT Time</th>
-                      <th colspan="2">Actual Time</th>
-                      <th colspan="4">OT Rate</th>
-                      <th rowspan="3">Tasks to be Accomplished</th>
+                      <th rowspan="4">Date</th>
+                      <th rowspan="4">Authorized OT Time</th>
+                      <th colspan="3">Actual OT Rendered</th>
+                      <th rowspan="4">Actual Accomplishments<br />(Please attach additional sheets if necessary)</th>
                     </tr>
 
 
-                    <tr id="trHead">
-                        <th rowspan="2">Start</th>
-                        <th rowspan="2">Finish</th>
+                    <tr>
+                        <th colspan="2">Actual OT Time</th>
                         <th colspan="2">1.25</th>
                         <th colspan="2">1.50</th>
                      </tr>
 
-                     <tr id="trHead">
-                        <th >Hours</th>
-                        <th >Minutes</th>
-                        <th >Hours</th>
-                        <th >Minutes</th>
+                     <tr>
+                        <th colspan="2">Morning</th>
+                        <th colspan="2">Afternoon</th>
+                        <th colspan="2">Hours</th>
+                        <th colspan="2">Minutes</th>
                      </tr>
+
+                      <tr>
+                        <th >In</th>
+                        <th >Out</th>
+                        <th >In</th>
+                        <th >Out</th>
+                     </tr>
+
 
                   </thead>
                 <tbody> 

@@ -73,7 +73,7 @@
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section" style="margin-top: -15%;">
+              <div class="menu_section" >
                 <ul class="nav side-menu">
                   
                   <li><a href="<?php echo base_url('process_improvement/')?>"> <i class="fa fa-user"></i> PROFILE </a>
@@ -81,12 +81,16 @@
                   <li><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>"> <i class="fa fa-user-secret"></i>EMPLOYEE ADMIN</a>
                   </li>
                   <li><a href="<?php echo base_url('process_improvement/viewLeave')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
-                   
                   </li>
-                  <li> <a href="<?php echo base_url('process_improvement/viewOvertimeRegular')?>"><i class="fa fa-clock-o"></i> OT </a>
-                  
+
+                  <li><a><i class="fa fa-clock-o"></i> OVERTIME <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url('process_improvement/viewOvertimeRegular')?>">REGULAR EMPLOYEE</a></li>
+                      <li><a href="<?php echo base_url('process_improvement/viewOvertimeContractual')?>">CONTRACTUAL EMPLOYEE</a></li>
+                    </ul>
                   </li>
-                  <li><a href="<?php echo base_url('process_improvement')?>"><i class="fa fa-info"></i>SUPERVISOR</a>
+
+                  <li><a href="<?php echo base_url('process_improvement/viewSVLeave')?>"><i class="fa fa-info"></i>SUPERVISOR</a>
                     
                   </li>
           
