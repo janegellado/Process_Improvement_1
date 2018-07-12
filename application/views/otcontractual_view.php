@@ -108,44 +108,51 @@
                     <div class="clearfix"></div>
                 <div class="x_content">
                    
-                    <table id="datatable" class="table table-striped table-bordered">
+                   <table id="datatable" class="table table-striped table-bordered">
                       <thead>
   
-                    <tr id="trHead">
-                      <th rowspan="3">Date of Filing</th>
-                      <th rowspan="3">Authorized OT Time</th>
-                      <th colspan="2">Actual Time</th>
-                      <th colspan="4">OT Rate</th>
-                      <th rowspan="3">Tasks to be Accomplished</th>
-                    </tr>
+                          <tr id="trHead">
+                            <th rowspan="3">Date of Filing</th>          
+                            <th rowspan="3">Authorized OT Time</th>
+                            <th colspan="2">Actual OT Time</th>
+                            <th colspan="4">OT Rate</th>
+                            <th rowspan="3">Tasks to be Accomplished /<br>Actual Accomplishments<br>(Please attach additional sheet of necessary)</th>
+                          </tr>
+
+                          <tr id="trHead">
+                            <th rowspan="2">Start</th>          
+                            <th rowspan="2">Finish</th>
+                            <th colspan="2">1.25</th>
+                            <th colspan="2">1.50</th>
+                          </tr>
+
+                           <tr id="trHead">
+                            <th >Hour</th>          
+                            <th >Minute</th>
+                            <th >Hour</th>          
+                            <th >Minute</th>
+                          </tr>
 
 
-                    <tr id="trHead">
-                        <th rowspan="2">Start</th>
-                        <th rowspan="2">Finish</th>
-                        <th colspan="2">1.25</th>
-                        <th colspan="2">1.50</th>
-                     </tr>
+                      </thead>
 
-                     <tr id="trHead">
-                        <th >Hours</th>
-                        <th >Minutes</th>
-                        <th >Hours</th>
-                        <th >Minutes</th>
-                     </tr>
 
-                  </thead>
-                <tbody> 
-                  <td>sample</td>
-                   <td>sample</td>
-                    <td>sample</td>
-                     <td>sample</td>
-                      <td>sample</td>
-                       <td>sample</td>
-                        <td>sample</td>
-                   
-                </tbody>
-            </table>
+                       <tbody>
+          
+                         <tr>
+                          <td>11/15/2018</td>
+                          <td>15-037-044</td>
+                          <td>Franchesca Marie Cortez</td>
+                          <td>Vacation Leave</td>
+                          <td>7</td>
+                          <td>00</td>
+                          <td>00</td>
+                          <td>00</td>
+                          <td>Sample Tasks</td>
+                        </tr>
+                      </tbody>
+                     </table>
+
 
      <div class="col-md-6" style="padding: 10px; text-align: center;">
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
