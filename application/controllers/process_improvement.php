@@ -7,48 +7,58 @@ class Process_Improvement extends CI_Controller {
 
         $this->load->model('employee_model','employee');
         $this->load->model('leavedb_model','leavedb');
-		$this->load->model('mr_model','mr');
-		$this->load->model('ot_model','ot');
-		$this->load->model('training_model','training');
-		$this->load->model('trainingsched_model','trainingsched');
+		    $this->load->model('mr_model','mr');
+		    $this->load->model('ot_model','ot');
+		    $this->load->model('training_model','training');
+		    $this->load->model('trainingsched_model','trainingsched');
 		
 
     }
 
     public function index()
+    { 
+
+
+          $data['employee'] = $this->employee->users();
+        	$this->load->view('include/header');
+            $this->load->view('pick', $data);
+        	$this->load->view('include/footer');
+    }
+
+    public function display()
     {			
-      if($this->session->userdata('username')){
-            $session_data=$this->session->userdata('logged_in');
-            $data['userID']=$this->session->userdata('username');
-			      $header_data['title'] = "LOG IN";
-            $employee_data = $this->employee->read();
-            foreach($employee_data as $ed)
-            {
-            $hold = array(
-                'employeeID' => $ed['employeeID'],
-                'employee_name' => $ed['employee_name'],
-                'pg_level' => $ed['pg_level'],
-                'birthday' => $ed['birthday'],
-                'date_hired' => $ed['date_hired'],
-                'position' => $ed['position'],
-                'promo_date'=>$ed['promo_date'],
-                'email' => $ed['email'],
-                'civil_stat' => $ed['civil_stat'],
-                'cp_no' => $ed['cp_no'],                                                
-                );
-            $data['employees_d']=$hold;
-            }
-            $this->load->view('include/header',$header_data);
-            $this->load->view('management_dashboard', $data);
-            $this->load->view('include/footer');
-      }
+
+    $employeeID = $this->input->post('employeeID');
+    $data = $this->employee->data($employeeID);
+    if(count($data)>0)
+    	{
+    		$array=$data;
+    	}
+    	echo json_encode($data);
     }
     public function viewEmployeeAdmin(){
-        
+        $data=$this->employee->read();
+        foreach($data as $d)
+            {
+          $arr = array(
+                'employeeID' => $d['employeeID'],
+                'employee_name' => $d['employee_name'],
+                'pg_level' => $d['pg_level'],
+                'birthday' => $d['birthday'],
+                'date_hired' => $d['date_hired'],
+                'position' => $d['position'],
+                'promo_date'=>$d['promo_date'],
+                'email' => $d['email'],
+                'civil_stat' => $d['civil_stat'],
+                'cp_no' => $d['cp_no'],                                                
+              );
+          $hold[]=$arr;
+            }
+      $data['employee'] = $hold;
         $header_data['title'] = "Employee Admin";
         $this->load->view('include/header',$header_data);
-        $this->load->view('employee_admin');
-       $this->load->view('include/footer');
+        $this->load->view('employee_admin',$data);
+        $this->load->view('include/footer');
         
         
     }
@@ -72,7 +82,7 @@ class Process_Improvement extends CI_Controller {
         if($this->form_validation->run()==FALSE){
             $header_data['title'] = "Add Employee";
             $this->load->view('include/header',$header_data);
-            $this->load->view('viewEmployeeAdmin');
+            $this->load->view('addEmployeeForm');
             $this->load->view('include/footer');
         }
        else{
@@ -156,6 +166,12 @@ class Process_Improvement extends CI_Controller {
         $this->load->view('mr_view');
         $this->load->view('include/footer');
         
+    }
+    public function newdisplay()
+    {
+    	$this->load->view('include/header');
+        $this->load->view('management_dashboard');
+        $this->load->view('include/footer');
     }
 
 

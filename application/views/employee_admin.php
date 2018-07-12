@@ -131,92 +131,7 @@
   
   <?php echo form_open('process_improvement/addEmployee'); 
   ?> 
-                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('employee_name')?>">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee ID</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('employeeID')?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">PG Level</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('pg_level')?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthdate</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('bday')?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Hired</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="value="<?php echo set_value('date_hired')?>"">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('email')?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Position</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('position')?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No.</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('cp_no')?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last Promotion</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('promo_date')?>">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil Status</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('civil_stat')?>">
-                        </div>
-                      </div>
-      
-    
-  
-  <div class="">
-    <label class="control-label col-sm-4">&nbsp;</label>
-  
-    </div>
-  
-   <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button" style="margin-left: 30%;"><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>" style="color: white;">Cancel</a></button>
-                          
-                          <button type="submit" class="btn btn-success" value="submit">Submit</button>
-                        </div>
-      </div>
-    
-  </div>
-  </form>
+                       
             </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -248,9 +163,9 @@
             <?php
         if($employee!=null){
                 foreach($employee as $c){  
-                    echo "<tr><td>".$c['employeeID']."</td><td>".$c['name']."</td><td>".$c['bday']."</td><td>".$c['date_hired']."</td><td>".$c['position']."</td><td>".$c['position']."</td><td>".$c['pg_level']."</td><td>".$c['promo_date']."</td><td>".$c['civil_stat']."</td><td>".$c['cp_no'].'</td>
+                    echo "<tr><td>".$c['employeeID']."</td><td>".$c['employee_name']."</td><td>".$c['birthday']."</td><td>".$c['date_hired']."</td><td>".$c['position']."</td><td>".$c['pg_level']."</td><td>".$c['promo_date']."</td><td>".$c['civil_stat']."</td><td>".$c['cp_no']."</td>".'
 
-                    <td><a href="'.base_url('knoxville/updateSalesAgent/'.$c['userID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>| <a href="'.base_url('knoxville/delSalesAgent/'.$c['userID']).'"class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Delete</a></td></tr>';
+                    <td><a href="'.base_url('process_improvement/updateemployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></td></tr>';
                     //echo base_url('knoxville/delClient/'.c['clientID'])
                 }
         }

@@ -23,6 +23,22 @@ class Employee_model extends CI_Model {
             return false;
           }
 
+     function reademployee(){
+        $this->db->select('*');
+        $this->db->from($this->table);
+        
+        if(isset($condition))
+            $this->db->where($condition);
+        
+        $query = $this->db->get('username');
+
+        
+        if($query->num_rows()>0)
+            return $query->result_array();
+        else
+            return false;
+          }
+
     function update($newRecord){
         $this->db->replace($this->table,$newRecord);
     }
@@ -38,6 +54,17 @@ class Employee_model extends CI_Model {
     $query = $this->db->query('SELECT * FROM employee');
     return $query->num_rows();
 
+    }
+
+    function users()
+    {
+        $query = $this->db->get('employee');
+        return $query->result();
+    }
+    function data($employeeID)
+    {
+        $query = $this->db->get_where('employee', array('employeeID' => $employeeID));
+        return $query->result();
     }
 }
 ?>

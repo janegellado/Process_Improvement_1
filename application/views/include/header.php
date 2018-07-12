@@ -98,7 +98,7 @@
                   </li>
                 
                   <li>
-                   <a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-book"></i>TRAINING</a>
+                   <a href="<?php echo base_url('process_improvement/viewTraining')?>"> <i class="fa fa-book"></i>TRAINING</a>
                   </li>
                 
                   <li>

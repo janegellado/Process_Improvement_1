@@ -21,9 +21,9 @@ class Login extends CI_Controller {
     public function verifyLogin($password) {
         $username = $this->input->post('username');
         
-        $condition = array('username'=>$username, 'password'=>$password);
+        $condition = array('username'=>$user, 'password'=>$pass);
         $this->load->model('employee_model','Employee');
-        $result_array = $this->Employee->read($condition);
+        $result_array = $this->Employee->read();
         
         if($result_array){
             foreach($result_array as $row){

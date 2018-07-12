@@ -1,3 +1,34 @@
+var employeeID = $(this).val();
+                if(employeeID == '')
+                {
+                    alert('error');
+                }
+                else
+                {
+                    $('#data').prop('disabled', false);
+                    $.ajax({
+                        url:"<?php echo base_url() ?>process_improvement/display",
+                        type: "POST",
+                        data: {'employeeID' : employeeID},
+                        dataType: 'json',
+                        success: function(data){
+                           $('data').html(data);
+                        },
+                        error: function(){
+                            alert('Error occur...!!');
+                        }
+                    });
+                }
+
+
+
+
+
+
+
+
+
+
 
 
         <!-- page content -->
@@ -9,31 +40,31 @@
 
             <div class="clearfix"></div>
            
-		  
-		  <div class="clearfix"></div>
+      
+      <div class="clearfix"></div>
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>My Profile</h2>
-			
+      
                     <div class="clearfix"></div>
                   
                   <div class="x_content">
-				  <div>&nbsp;</div>
+          <div>&nbsp;</div>
                     <div>
                       <div class="" style="width: 32%; height: 398px; border: 3px solid gray; position: absolute; margin-left: 3%;"> </div>
-                     <table  class="table table-striped table-bordered" style="width: 60%; align: center; margin-left: 37%;">
+                     <table  class="table table-striped table-bordered" style="width: 60%; align: center; margin-left: 37%;" name="data">
                       <thead > 
-           <tr id="trHead">
+           <tr id="trHead" name="name">
             <th style="width: 35%;" scope="row">NAME</th>
-<!--             <td> <?php print_r($name)?></td> -->
+                        <td> </td>  
           </tr>
         
-          <tr id="trHead">
+          <tr id="trHead" name="employeeID">
             <th scope="row">EMPLOYEE ID NO </th>
-<!--             <td><?php print_r($id)?></td> -->
+
           </tr>
           
           <tr id="trHead">
@@ -87,9 +118,9 @@
         
       </tbody>
     </table>
-		  
-		   </div>
-		   </div>
+      
+       </div>
+       </div>
         </div>
         </div>
         </div>
@@ -98,4 +129,23 @@
         </div>
         <!-- /page content -->
 
-        
+
+
+
+
+foreach($data as $d)
+      {
+          $arr = array(
+                'employeeID' => $d['employeeID'],
+                'employee_name' => $d['employee_name'],
+                'pg_level' => $d['pg_level'],
+                'birthday' => $d['birthday'],
+                'date_hired' => $d['date_hired'],
+                'position' => $d['position'],
+                'promo_date'=>$d['promo_date'],
+                'email' => $d['email'],
+                'civil_stat' => $d['civil_stat'],
+                'cp_no' => $d['cp_no'],                                                
+              );
+      }
+      $arr[] = $data;
