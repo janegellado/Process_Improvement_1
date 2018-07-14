@@ -113,19 +113,9 @@
                     <h4>List of Employee</h4>
                     <ul class="nav navbar-right panel_toolbox">
                   
-                      <li><a data-toggle="modal" data-target="#squarespaceModal" class="butt5" ><i class="fa fa-plus"></i> Add Employee </a>
+                      <li><a href="<?php echo base_url('process_improvement/addEmployee')?>" ><i class="fa fa-plus"></i> Add Employee </a>
             
-              
-
-<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-      <h3 class="modal-title" id="lineModalLabel">Add Employee</h3>
-    </div>
-    <div class="modal-body">
-    <div>&nbsp;</div>
+     
   <div class="container">
   <?php echo validation_errors(); ?>
   
