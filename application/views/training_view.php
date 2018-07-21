@@ -18,33 +18,35 @@
                       <p class="text-muted font-13 m-b-30">Training Details.</p>
                     <div>&nbsp;</div>
 
-                         <div class="x_content">
-                  <div class="col-md-5" style="padding: 0px; text-align: center; position: absolute;">
+              <div class="x_content">
+                  <div class="col-md-12" style=" text-align: center; ">
 
                       <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row">
 
                      <div class="form-group col">
-                        <label class="control-label col-md-12 col-sm-12 col-xs-12">Title of Seminar/Workshop/Conference/Short Courses (Write in full)</label>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
+                        <label class="control-label col-md-5 col-sm-5 col-xs-5">Title of Seminar/Workshop/Conference/Short Courses (Write in full)</label>
+                        <div class="col-md-8 col-sm-8 col-xs-8">
                           <input type="text" class="form-control" placeholder="Default Input">
                         </div>
                       </div>
 
                       <div>&nbsp;</div>
-                      <label style="margin-left: -74%;">INCLUSIVE DATES</label>
-                      <div class="form-group">
+                   <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row form-horizontal">
+                      <label style="margin-left: -85%;">INCLUSIVE DATES</label>
+                      <div class="form-group" style="margin-left: -25%;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">From</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="col-md-3 col-sm-3 col-xs-3">
                           <input type="date" class="form-control" placeholder="Default Input">
                         </div>
                       </div>
 
-                      <div class="form-group">
+                      <div class="form-group" style="margin-left: -25%;">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">To</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="col-md-3 col-sm-3 col-xs-3">
                           <input type="date" class="form-control" placeholder="Default Input">
                         </div>
                       </div>
+                  </form>
 
                       <div class="form-group" style="margin-top: 20px;">
                   <label class="control-label col-md-6 col-sm-6 col-xs-12">No. of hours: </label>
@@ -84,28 +86,25 @@
 
                     <br />
   <!--table start-->
-                    <table id="datatable" class="table table-striped table-bordered"    >
-                      <thead>
+                <table id="datatable" class="table table-striped table-bordered">
+                  <thead>
   
                     <tr id="trHead">
-            <th >Title</th>
-            <th >Inclusive Dates</th>
-            <th >No. of Hours</th>
-            <th >Conducted/Sponsored By:</th>
-            <th >ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-            <!--<?php
-        if($leave!=null){
-                foreach($leave as $c){  
-                    echo "<tr><td>".$c['title']."</td><td>".$c['id_from']."</td><td>".$c['id_to']."</td><td>".$c['no_of_hours']."</td><td>".$c['conducted_by']."</td><td>".$c['status'].'</td>
+                      <th rowspan="2">Title</th>
+                      <th colspan="2">Inclusive Dates of Attendance<br>(mm/dd/yyy)</th>
+                      <th rowspan="2">No. of Hours</th>
+                      <th rowspan="2">Conducted/Sponsored By:</th>
+                      <th rowspan="2">ATTACHMENTS</th>
+                    </tr>
 
-                    <td><a href="'.base_url('knoxville/updateSalesAgent/'.$c['userID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Edit</a>| <a href="'.base_url('knoxville/delSalesAgent/'.$c['userID']).'"class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Delete</a></td></tr>';
-                    //echo base_url('knoxville/delClient/'.c['clientID'])
-                }
-        }
-            ?>-->
+                    <tr id="">
+                      <th >FROM</th>
+                      <th >TO</th>
+                      
+                    </tr>
+                  </thead>
+        <tbody>
+            
         </tbody>
     </table>
               
