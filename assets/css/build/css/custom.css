@@ -1178,7 +1178,7 @@ table.tile span {
 }
 table.tile th,
 table.tile td {
-    text-align: center
+    text-align: center;
 }
 table.tile th {
     border-bottom: 1px solid #E6ECEE
