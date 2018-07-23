@@ -6,90 +6,78 @@
                 <div class="x_panel">
                   <div class="x_title">
                       <h4>Overtime</h4>
-
+                        <div class="clearfix"></div>
+                      </div>
         <div class="col-md-12" style="top: 10px;padding: 10px; text-align: left; ">
-          <form id="demo-form2" data-parsley-validate class="form-horizontal form-inline">
+          <form id="demo-form2" data-parsley-validate class="form-horizontal ">
 
-                     <div class="form-group" style=" width: 50%;">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Filed</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                      <div class="form-group" style="margin-left: -25%;">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Filed</label>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="date" class="form-control" placeholder="Default Input">
                         </div>
                       </div>
-                      <div><br /></div>
-                       <div class="form-group">
-                        <label class="">Authorized OT Time</label>
-                      </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">From: </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                      <div>&nbsp;</div>
+                      <label style="margin-left: %;">AUTHORIZED OT TIME</label>
+                      <div class="form-group" style="margin-left: -25%;">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">From</label>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: -20%;">To</label>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="date" class="form-control" placeholder="Default Input">
+                        </div>
+
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: -17%;">OT Rate</label>
+                        <div class="col-sm-1 ">
+                          <input type="text" class="form-control" placeholder="00">
                         </div>
                       </div>
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">To: </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                      <div>&nbsp;</div>
+                      <label style="margin-left: %;">ACTUAL OT TIME</label>
+                      <div class="form-group" style="margin-left: -25%;">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Start</label>
+                        <div class="col-md-1 col-sm-1col-xs-1">
+                          <input type="time" class="form-control" placeholder="Default Input">
+                        </div>
+
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: -20%;">Finish</label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                          <input type="time" class="form-control" placeholder="Default Input">
+                        </div>
+
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: -17%;">Hour</label>
+                        <div class="col-sm-1 ">
+                          <input type="text" class="form-control" placeholder="00">
+                        </div>
+
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: -16.5%;">Minute</label>
+                        <div class="col-sm-1 ">
+                          <input type="text" class="form-control" placeholder="00">
                         </div>
                       </div>
 
-                      <div class="form-group" style="margin-left: 20px;">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">OT Rate</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control"style="width: 35%;" placeholder="Default Input">
+                      <div>&nbsp;</div>
+                      <div class="form-group col-sm-12" style="margin-left: -34%;">
+                      <label class="control-label col-md-6 col-sm-6 col-xs-12">Tasks to be Accomplished</label>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                          <input type="text" class="form-control" placeholder="Input tasks">
                         </div>
                       </div>
 
-                       <div><br /></div>
-                       <div class="form-group">
-                        <label class="">Actual OT Time</label>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Start</label>
-                        <div class="">
-                          <input type="text" class="form-control" style="width: 50%;" placeholder="00:00">
-                        </div>
-                      </div>
-
-                      <div class="form-group" style="width: 25%;">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Finish</label>
-                        <div>
-                          <input type="text" class="form-control"  style="width: 35%;" placeholder="00">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Hour</label>
-                        <div class="">
-                          <input type="text" class="form-control"  style="width: 35%;" placeholder="00">
-                        </div>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Minute</label>
-                        <div class="">
-                          <input type="text" class="form-control"  style="width: 35%;" placeholder="00">
-                        </div>
-                      </div>
-
-                        <div><br /></div>
-                      <div class="form-group"  >
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tasked to be Accomplished</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Input Tasks">
-                        </div>
-                      </div>
  </form>
   </div>
- </div>
-                  <div class="form-group pull-right" style="margin-right: 5%;">
-                        <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-success" type="reset">Add</button>
-                          <button type="submit" class="btn btn-success" value="submit">Clear</button>
+                        <div class="form-group pull-right" style="margin-right: 5%;">
+                          <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
+                            <button class="btn btn-success" type="reset">Add</button>
+                            <button type="submit" class="btn btn-success" value="submit">Clear</button>
+                          </div>
                         </div>
+                  
 </div>
 
 </div><!--end of first panel-->
