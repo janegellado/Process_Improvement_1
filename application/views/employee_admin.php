@@ -121,7 +121,7 @@
                       <p class="text-muted font-13 m-b-30">
                         Manage all the Employees here.
                       </p>
-                      <table id="datatable" class="table table-striped table-bordered">
+                      <table id="datatable" class="table table-striped table-bordered col-md-12">
                         <thead>
     
                       <tr id="trHead">
@@ -143,8 +143,7 @@
         if($employee!=null){
                 foreach($employee as $c){  
                     echo "<tr><td>".$c['employeeID']."</td><td>".$c['employee_name']."</td><td>".$c['pg_level']."</td><td>".$c['birthday']."</td><td>".$c['date_hired']."</td><td>".$c['position']."</td><td>".$c['email']."</td><td>".$c['promo_date']."</td><td>".$c['civil_stat']."</td><td>".$c['cp_no']."</td>".'
-
-                    <td><a href="'.base_url('process_improvement/updateEmployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil">Edit</td></tr>';
+                    <td><a href="'.base_url('process_improvement/updateEmployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil">Edit</i></a> | <a href="'.base_url('process_improvement/delEmployee/'.$c['employeeID']).'"class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Delete</a></td></tr>';
                     
                 }
         }

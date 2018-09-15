@@ -143,6 +143,12 @@ class Process_Improvement extends CI_Controller {
             }
 }
 
+        public function delEmployee($employeeID){
+        $where_array = array('employeeID'=>$employeeID);
+        $this->employee->del($where_array);
+        redirect('process_improvement/viewEmployeeAdmin');
+          }
+
     public function viewLeave(){
      
         $header_data['title'] = "Leave";

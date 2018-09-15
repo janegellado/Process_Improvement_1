@@ -30,6 +30,7 @@ class Employee_model extends CI_Model {
     }
     
     function del($where_array){
+        
         $this->db->delete($this->table,$where_array);
     }
 
