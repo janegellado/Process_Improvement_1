@@ -50,7 +50,7 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthdate</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('bday')?>">
+                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('birthday')?>">
                         </div>
                       </div>
 

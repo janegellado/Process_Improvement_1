@@ -3,11 +3,12 @@
 class Employee_model extends CI_Model {
     private $table = 'employee';
     
-    function create($employeeRecord){
+   public function create($employeeRecord){
+
         $this->db->insert($this->table, $employeeRecord);
     }
     
-    function read(){
+    function read($condition=null){
         $this->db->select('*');
         $this->db->from($this->table);
         
@@ -15,22 +16,6 @@ class Employee_model extends CI_Model {
             $this->db->where($condition);
         
         $query = $this->db->get();
-
-        
-        if($query->num_rows()>0)
-            return $query->result_array();
-        else
-            return false;
-          }
-
-     function reademployee(){
-        $this->db->select('*');
-        $this->db->from($this->table);
-        
-        if(isset($condition))
-            $this->db->where($condition);
-        
-        $query = $this->db->get('username');
 
         
         if($query->num_rows()>0)
