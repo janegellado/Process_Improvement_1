@@ -149,6 +149,15 @@ class Process_Improvement extends CI_Controller {
         
     }
 
+    public function viewTrainingAdmin(){
+     
+        $header_data['title'] = "Training Admin";
+        $this->load->view('include/header',$header_data);
+        $this->load->view('trainingadmin_view');
+        $this->load->view('include/footer');
+        
+    }
+
      public function viewOvertimeRegular(){
      
         $header_data['title'] = "Employee Admin";

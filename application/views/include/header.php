@@ -106,7 +106,7 @@
                   </li>
                 
                   <li>
-                    <a href="<?php echo base_url('process_improvement')?>"> <i class="fa fa-user-secret"></i>TRAINING ADMIN</a>
+                    <a href="<?php echo base_url('process_improvement/viewTrainingAdmin')?>"> <i class="fa fa-user-secret"></i>TRAINING ADMIN</a>
                   </li>
 
                 </ul>
