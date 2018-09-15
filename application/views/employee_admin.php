@@ -29,8 +29,7 @@
   <div class="container">
   <?php echo validation_errors(); ?>
   
-  <?php echo form_open('process_improvement/viewEmployeeAdmin'); //this is equal to <form method="post" accept-charset="utf-8" action="http://localhost/Knoxville-Auto-Supply/knoxville/addClient">
-                                     //to add attributes, edit to: echo form('knoxville/addClient','class="lala" id="lala"'); 
+  <?php echo form_open('process_improvement/addEmployee'); 
   ?> 
 
                       <div class="form-group has-feedback">
@@ -39,18 +38,18 @@
                       </div>
 
                       <div class=" form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left"  required="required"for="name" id="inputSuccess2" placeholder=" Employee Name" name="name" value="<?php echo set_value('employee_name'); ?>" id="name">
+                        <input type="text" class="form-control has-feedback-left"  required="required"for="employee_name" id="inputSuccess2" placeholder=" Employee Name" name="employee_name" value="<?php echo set_value('employee_name'); ?>" id="employee_name">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left"  required="required"for="pg_level" id="inputSuccess2" placeholder=" PG Level" name="name" value="<?php echo set_value('pg_level'); ?>" id="name">
+                        <input type="text" class="form-control has-feedback-left"  required="required"for="pg_level" id="inputSuccess2" placeholder=" PG Level" name="pg_level" value="<?php echo set_value('pg_level'); ?>" id="pg_level">
                         <span class="fa fa-industry form-control-feedback left" aria-hidden="true"></span>
                       </div>
             
             
                       <div class=" form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" required="required" for="bday" id="inputSuccess2" placeholder="  Birthdate" name="bday" value="<?php echo set_value('birthday'); ?>" id="bday">
+                        <input type="date" class="form-control has-feedback-left" required="required" for="birthday" id="inputSuccess2" placeholder=" Birthdate" name="birthday" value="<?php echo set_value('birthday'); ?>" id="birthday">
                         <span class="fa fa-birthday-cake form-control-feedback left" aria-hidden="true"></span>
                       </div>
                     
@@ -70,8 +69,6 @@
                         <span class="fa fa-at form-control-feedback left" aria-hidden="true"></span>
                       </div>
             
-                      
-
                       <div class=" form-group has-feedback">
                         <input type="date" class="form-control has-feedback-left" required="required" for="promo_date" id="inputSuccess2" placeholder="Last Promotion Date" name="promo_date" value="<?php echo set_value('promo_date'); ?>" id="promo_date">
                         <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
@@ -100,6 +97,7 @@
       </div>
     
   </div>
+  
 </div>
 </div>
 </div>
@@ -119,14 +117,14 @@
                       </li>
                     </ul>
                     <div class="clearfix"></div>
-  <div class="x_content">
-                    <p class="text-muted font-13 m-b-30">
-                      Manage all the Employees here.
-                    </p>
-                    <table id="datatable" class="table table-striped table-bordered">
-                      <thead>
-  
-                    <tr id="trHead">
+                      <div class="x_content">
+                      <p class="text-muted font-13 m-b-30">
+                        Manage all the Employees here.
+                      </p>
+                      <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+    
+                      <tr id="trHead">
             <th >Employee ID</th>
             <th >Name</th>
             <th >Pg Level</th>
@@ -146,7 +144,7 @@
                 foreach($employee as $c){  
                     echo "<tr><td>".$c['employeeID']."</td><td>".$c['employee_name']."</td><td>".$c['pg_level']."</td><td>".$c['birthday']."</td><td>".$c['date_hired']."</td><td>".$c['position']."</td><td>".$c['email']."</td><td>".$c['promo_date']."</td><td>".$c['civil_stat']."</td><td>".$c['cp_no']."</td>".'
 
-                    <td><a href="'.base_url('process_improvement/updateemployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></td></tr>';
+                    <td><a href="'.base_url('process_improvement/updateEmployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil">Edit</td></tr>';
                     
                 }
         }
@@ -154,6 +152,15 @@
         </tbody>
     </table>
     </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
 
 
  

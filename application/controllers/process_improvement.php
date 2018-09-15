@@ -37,29 +37,14 @@ class Process_Improvement extends CI_Controller {
     	echo json_encode($data);
     }
     public function viewEmployeeAdmin(){
-        $data=$this->employee->read();
-        foreach($data as $d)
-            {
-          $arr = array(
-                'employeeID' => $d['employeeID'],
-                'employee_name' => $d['employee_name'],
-                'pg_level' => $d['pg_level'],
-                'birthday' => $d['birthday'],
-                'date_hired' => $d['date_hired'],
-                'position' => $d['position'],
-                'promo_date'=>$d['promo_date'],
-                'email' => $d['email'],
-                'civil_stat' => $d['civil_stat'],
-                'cp_no' => $d['cp_no'],                                                
-              );
-          $hold[]=$arr;
-            }
-      $data['employee'] = $hold;
-        $header_data['title'] = "Employee Admin";
+        $result_array = $this->employee->read();
+        $data['employee'] = $result_array; 
+        $id =  $this->employee->count();
+        $data['employeeID'] = (string) $id++;
+        $header_data['title'] = "View Employees";
         $this->load->view('include/header',$header_data);
         $this->load->view('employee_admin',$data);
-        $this->load->view('include/footer');
-        
+       $this->load->view('include/footer');
         
     }
    
@@ -70,10 +55,11 @@ class Process_Improvement extends CI_Controller {
         $rules = array(
                    array('field'=>'employeeID', 'label'=>'Employee ID', 'rules'=>'required'),
                    array('field'=>'employee_name', 'label'=>'Name', 'rules'=>'required'),
+                   array('field'=>'pg_level', 'label'=>'PG_Level', 'rules'=>'required'),
                    array('field'=>'birthday', 'label'=>'Birthdate', 'rules'=>'required'),
                    array('field'=>'date_hired', 'label'=>'Date Hired', 'rules'=>'required'),
                    array('field'=>'position', 'label'=>'Position', 'rules'=>'required'),
-                   array('field'=>'pg_level', 'label'=>'PG Level', 'rules'=>'required'),
+                   array('field'=>'email', 'label'=>'Email', 'rules'=>'required'),
                    array('field'=>'promo_date', 'label'=>'Date of last promotion', 'rules'=>'required'),
                    array('field'=>'civil_stat', 'label'=>'Civil Status', 'rules'=>'required'),
                    array('field'=>'cp_no', 'label'=>'Contact No', 'rules'=>'required')
@@ -86,22 +72,76 @@ class Process_Improvement extends CI_Controller {
         }
        else{
           
-            $employeeRecord=array('employeeID'=>$_POST['employeeID']
-            //'password'=>password_hash($_POST['pass'],PASSWORD_BCRYPT)
-              ,'employee_name'=>$_POST['employee_name'],'birthday'=>$_POST['birthday'],'date hired'=>$_POST['date_hired'],'position'=>$_POST['position'],'pg level'=>$_POST['pg_level'],'date of last promotion'=>$_POST['promo_date'],'civil status'=>$_POST['civil_stat'],'contact no'=>$_POST['cp_no']);
-            $this->employee->create($employeeRecord);
-            redirect('viewEmployeeAdmin');
-        }
+            $employeeRecord=array(
+                'employeeID'=>$_POST['employeeID'],
+                'employee_name'=>$_POST['employee_name'],
+                'pg_level'=>$_POST['pg_level'],
+                'birthday'=>$_POST['birthday'],
+                'date_hired'=>$_POST['date_hired'],
+                'position'=>$_POST['position'],
+                'email'=>$_POST['email'],
+                'promo_date'=>$_POST['promo_date'],
+                'civil_stat'=>$_POST['civil_stat'],
+                'cp_no'=>$_POST['cp_no']
+            );
+            $this->employee->createemployee($employeeRecord);
+            redirect('process_improvement/viewEmployeeAdmin');
+            }
     }
 
-    public function updateEmployee(){
-        
-            $title['title']="Update Employee";
-            $this->load->view('include/header',$title);
+    public function updateEmployee($employeeID){
+         $record['employeeID']=$employeeID;
+         $condition = array('employeeID' => $employeeID);
+         $oldRecord = $this->employee->read($condition);
+        foreach($oldRecord as $o){
+                $data['employeeID']=$o['employeeID'];
+                $data['employee_name']=$o['employee_name'];
+                $data['pg_level']=$o['pg_level'];
+                $data['birthday']=$o['birthday'];
+                $data['date_hired']=$o['date_hired'];
+                $data['position']=$o['position'];
+                $data['email']=$o['email'];
+                $data['promo_date']=$o['promo_date'];
+                $data['civil_stat']=$o['civil_stat'];
+                $data['cp_no']=$o['cp_no'];
+     }
+     $rules = array(
+                   array('field'=>'employeeID', 'label'=>'Employee ID', 'rules'=>'required'),
+                   array('field'=>'employee_name', 'label'=>'Name', 'rules'=>'required'),
+                   array('field'=>'pg_level', 'label'=>'PG_Level', 'rules'=>'required'),
+                   array('field'=>'birthday', 'label'=>'Birthdate', 'rules'=>'required'),
+                   array('field'=>'date_hired', 'label'=>'Date Hired', 'rules'=>'required'),
+                   array('field'=>'position', 'label'=>'Position', 'rules'=>'required'),
+                   array('field'=>'email', 'label'=>'Email', 'rules'=>'required'),
+                   array('field'=>'promo_date', 'label'=>'Date of last promotion', 'rules'=>'required'),
+                   array('field'=>'civil_stat', 'label'=>'Civil Status', 'rules'=>'required'),
+                   array('field'=>'cp_no', 'label'=>'Contact No', 'rules'=>'required')
+                );
+             $this->form_validation->set_rules($rules);
+            if($this->form_validation->run()==FALSE){
+            $header_data['title'] = "Update Employee";
+            $this->load->view('include/header',$header_data);
             $this->load->view('updateEmployeeForm',$data);
             $this->load->view('include/footer');
-        
-    }
+        }
+            else{
+          
+            $newRecord=array(
+                'employeeID'=>$_POST['employeeID'],
+                'employee_name'=>$_POST['employee_name'],
+                'pg_level'=>$_POST['pg_level'],
+                'birthday'=>$_POST['birthday'],
+                'date_hired'=>$_POST['date_hired'],
+                'position'=>$_POST['position'],
+                'email'=>$_POST['email'],
+                'promo_date'=>$_POST['promo_date'],
+                'civil_stat'=>$_POST['civil_stat'],
+                'cp_no'=>$_POST['cp_no']
+            );
+            $this->employee->update($newRecord);
+            redirect('process_improvement/viewEmployeeAdmin');
+            }
+}
 
     public function viewLeave(){
      
@@ -146,15 +186,6 @@ class Process_Improvement extends CI_Controller {
             $this->load->view('include/header',$title);
             $this->load->view('updateTrainingForm',$data);
             $this->load->view('include/footer');
-        
-    }
-
-    public function viewTrainingAdmin(){
-     
-        $header_data['title'] = "Training Admin";
-        $this->load->view('include/header',$header_data);
-        $this->load->view('trainingadmin_view');
-        $this->load->view('include/footer');
         
     }
 

@@ -3,7 +3,7 @@
 class Employee_model extends CI_Model {
     private $table = 'employee';
     
-   public function create($employeeRecord){
+    function createemployee($employeeRecord){
 
         $this->db->insert($this->table, $employeeRecord);
     }
@@ -25,7 +25,8 @@ class Employee_model extends CI_Model {
           }
 
     function update($newRecord){
-        $this->db->replace($this->table,$newRecord);
+
+        $this->db->replace($this->table, $newRecord);
     }
     
     function del($where_array){
