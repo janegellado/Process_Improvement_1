@@ -11,72 +11,92 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Training Attended</h2>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="clearfix"></div>
-                    <div class="x_content" >
-                      <p class="text-muted font-13 m-b-30">Training Details.</p>
-                    <div>&nbsp;</div>
+                                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a data-toggle="modal" data-target="#squarespaceModal" class="butt5" ><i class="fa fa-plus"></i> Add Training </a>
+                           <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                 <div class="modal-content">
 
-              <div class="x_content">
-                  <div class="col-md-12" style=" text-align: center; ">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><h3 class="modal-title" id="lineModalLabel">Add Training</h3>
+                                    </div>
 
-                      <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row">
+                                  <div class="modal-body">
+                                      <div>&nbsp;</div>
+                                        <div class="container">
+                                          <?php echo validation_errors(); ?>
+                                          <?php echo form_open('process_improvement/addEmployee');?> 
 
-                     <div class="form-group col">
-                        <label class="control-label col-md-5 col-sm-5 col-xs-5">Title of Seminar/Workshop/Conference/Short Courses (Write in full)</label>
-                        <div class="col-md-9col-sm-9 col-xs-9">
-                          <input type="text" class="form-control" placeholder="Default Input">
-                        </div>
-                      </div>
-
+                 <form id="demo-form" data-parsley-validate>
+                      <label for="fullname">Title of Seminar/Workshop/Conference/Short Course (Write in full) :</label>
+                      <input type="text" id="fullname" class="form-control" name="fullname" required />
                       <div>&nbsp;</div>
-                   <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left row form-horizontal">
-                      <label style="margin-left: -85%;">INCLUSIVE DATES</label>
-                      <div class="form-group" style="margin-left: -25%;">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">From</label>
-                        <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="date" class="form-control" placeholder="Default Input">
-                        </div>
+                     
+                        <label for="email">INCLUSIVE DATES</label><br>
+                      
+                       <div class="form-group">
+                          <label class="control-label col-md-1 col-sm-1 col-xs-12" for="">FROM</span>
+                          </label>
+                          <div class="col-md-3 col-sm-3 col-xs-12">
+                            <input type="date" id="" required="required" class="form-control col-md-7 col-xs-12">
+                          </div>
 
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: -20%;">To</label>
-                        <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="date" class="form-control" placeholder="Default Input">
-                        </div>
+                          <label class="control-label col-md-1 col-sm-1 col-xs-12" for="">TO</span>
+                          </label>
+                          <div class="col-md-3 col-sm-3 col-xs-12">
+                            <input type="date" id="" required="required" class="form-control col-md-7 col-xs-12">
+                          </div>
 
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="margin-left: -17%;">No. of Hours</label>
-                        <div class="col-sm-1 ">
-                          <input type="text" class="form-control" placeholder="00">
+                          <label class="control-label col-md-2 col-sm-2 col-xs-12" for="">NO. OF HOURS</span>
+                          </label>
+                          <div class="col-md-2 col-sm-2 col-xs-12">
+                            <input type="text" id="" required="required" class="form-control col-md-7 col-xs-12">
+                          </div>
                         </div>
-                      </div>
+                        <div>&nbsp;</div>
+
+                      <label for="sponsor">Conducted/Sponsored By :</label>
+                      <input type="text" id="" class="form-control" name="" required />
                   </form>
 
-                      <div class="form-group col" style="margin-top: 20px;">
-                        <label class="control-label col-md-5 col-sm-5 col-xs-5" style="margin-left: -11%;">Conducted or Sponsored By: </label>
-                        <div class="col-md-9 col-sm-9 col-xs-9">
-                          <input type="text" class="form-control" placeholder="Default Input">
+                            <!--for spacing only-->
+                                            <div class="">
+                                              <label class="control-label col-sm-4">&nbsp;</label>
+                                            </div>
+  
+                            <!--for buttons--><div class="form-group">
+                                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                                <button class="btn btn-success" type="button" style="margin-left: 50px;"><a href="<?php echo base_url('')?>" style="color: white;">Add</a></button>
+                                                <button type="submit" class="btn btn-success" value="submit">Cancel</button>
+
+                                               </div>
+                                            </div>
+    
+                                        </div>
+  
+                                  </div>
+                            </div>
                         </div>
-                      </div>
-                   </div>
- </form>               
- </div>
-    <div style="padding-top: 20px;position: absolute; margin-left: 80%;margin-top: 9.5%;">
-        <button class="btn btn-sm btn-success" type="submit">ADD</button>
-        <button type="reset" class="btn btn-sm btn-success" value="submit">CLEAR</button>
-    </div>
- 
-                    
+                    </div>
+<!--end of modal-->
 
-<div class="col-md-12 col-sm-12 col-xs-12" style="top:10px;" ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h4>List of Trainings</h4>
+  <div class="container">
+  <?php echo validation_errors(); ?>
+  
+  <?php echo form_open('process_improvement/viewEmployeeAdmin'); 
+  ?> 
+                       
+            </li>
+                    </ul>
+                    <div class="clearfix"></div>
                   </div>
-                  <div class="x_content" >
+                   
+                    <div class="x_content" >
+                    <div>&nbsp;</div>
 
-                    <br />
-  <!--table start-->
-                <table id="datatable" class="table table-striped table-bordered">
+            <!--content-->
+            <div class="x_content">
+                  <table id="datatable" class="table table-striped table-bordered">
                   <thead>
   
                     <tr id="trHead">
@@ -110,10 +130,6 @@
      <div style="float: right;"> 
                     <a href="" class="btn btn-success btn-xs"><i class="fa fa-print"></i> Print</a>
                   </div>
-              
-     
-    </div>
-  </div>
-
+                          </div>
 
 </body>
