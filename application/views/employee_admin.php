@@ -34,7 +34,7 @@
 
                       <div class="form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left" required="required" for="employeeID" id="inputSuccess2" placeholder=" Employee ID" name="employeeID" value="<?php echo set_value('employeeID')?>" id="employeeID">
-                        <span class="fa fa-id-card-o form-control-feedback left" aria-hidden="true"></span>
+                        <span class="fa fa-street-view form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class=" form-group has-feedback">
@@ -55,7 +55,7 @@
                     
                      <div class=" form-group has-feedback">
                         <input type="date" class="form-control has-feedback-left" required="required" for="date_hired" id="inputSuccess2" placeholder="Date Hired" name="date_hired" value="<?php echo set_value('date_hired'); ?>" id="date_hired">
-                        <span class="fa fa-id-card-o form-control-feedback left" aria-hidden="true"></span>
+                        <span class="fa fa-star-o form-control-feedback left" aria-hidden="true"></span>
                       </div>
             
 
@@ -71,12 +71,12 @@
             
                       <div class=" form-group has-feedback">
                         <input type="date" class="form-control has-feedback-left" required="required" for="promo_date" id="inputSuccess2" placeholder="Last Promotion Date" name="promo_date" value="<?php echo set_value('promo_date'); ?>" id="promo_date">
-                        <span class="fa fa-calendar form-control-feedback left" aria-hidden="true"></span>
+                        <span class="fa fa-cubes form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class=" form-group has-feedback">
                         <input type="text" class="form-control has-feedback-left"  required="required" for="civil_stat" id="inputSuccess2" placeholder="Civil Status" name="civil_stat" value="<?php echo set_value('civil_stat'); ?>" id="civil_stat">
-                        <span class="fa fa-user-circle-o form-control-feedback left" aria-hidden="true"></span>
+                        <span class="fa fa-diamond form-control-feedback left" aria-hidden="true"></span>
                       </div>
 
                       <div class=" form-group has-feedback">
@@ -143,7 +143,7 @@
         if($employee!=null){
                 foreach($employee as $c){  
                     echo "<tr><td>".$c['employeeID']."</td><td>".$c['employee_name']."</td><td>".$c['pg_level']."</td><td>".$c['birthday']."</td><td>".$c['date_hired']."</td><td>".$c['position']."</td><td>".$c['email']."</td><td>".$c['promo_date']."</td><td>".$c['civil_stat']."</td><td>".$c['cp_no']."</td>".'
-                    <td><a href="'.base_url('process_improvement/updateEmployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil">Edit</i></a> | <a href="'.base_url('process_improvement/delEmployee/'.$c['employeeID']).'"class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>Delete</a></td></tr>';
+                    <td><a href="'.base_url('process_improvement/updateEmployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a><a href="'.base_url('process_improvement/delEmployee/'.$c['employeeID']).'"class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a></td></tr>';
                     
                 }
         }
