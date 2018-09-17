@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2018 at 08:26 AM
+-- Generation Time: Sep 17, 2018 at 03:22 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -48,9 +48,10 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`employeeID`, `employee_name`, `pg_level`, `birthday`, `date_hired`, `position`, `email`, `promo_date`, `civil_stat`, `cp_no`, `username`, `password`) VALUES
-('1', 'Janelyn', '6', '08/08/2016', '06/18/2018', '', 'janelynanngellado@gmail.com', '06/18/2018', 'single', 12355, 'jane', '12345'),
-('2', 'Chesca', '5', '11/15/98', '06/18/2018', '', 'chesca@gmail.com', '06/18/2018', 'single', 12355, 'ches', '12345'),
-('3', 'Xandra', '5', '01/30/99', '06/18/2018', '', 'xandra@gmail.com', '06/18/2018', 'single', 12355, 'xandra', '12345'),
+('1', 'Janelyn', '6', '08/08/2016', '06/18/2018', 'OJT', 'janelynanngellado@gmail.com', '06/18/2018', 'single', 12355, '', ''),
+('1234', 'Al', '5', '1998-11-07', '2018-09-17', 'OJT', 'alorias', '2018-09-17', 'single', 911111111, '', ''),
+('2', 'Chesca', '5', '11/15/98', '06/18/2018', 'OJT', 'chesca@gmail.com', '06/18/2018', 'single', 12355, '', ''),
+('3', 'Xandra', '5', '01/30/99', '06/18/2018', 'OJT', 'xandra@gmail.com', '06/18/2018', 'single', 12355, '', ''),
 ('4', 'Noel', '5', '11/18/1998', '06/18/2018', 'Programmer', 'noelbenusa@gmail.com', '06/18/2018', 'single', 1234567891, 'noel', '12345677');
 
 -- --------------------------------------------------------
@@ -60,18 +61,22 @@ INSERT INTO `employee` (`employeeID`, `employee_name`, `pg_level`, `birthday`, `
 --
 
 CREATE TABLE `leavedb` (
-  `employeeID` varchar(20) NOT NULL,
   `date_of_filing` varchar(20) NOT NULL,
   `place` text NOT NULL,
   `type` text NOT NULL,
-  `emarks` varchar(50) NOT NULL,
-  `ic_from` varchar(20) NOT NULL,
-  `ic_to` varchar(20) NOT NULL,
+  `inc_dates` date NOT NULL,
   `recommendation` varchar(50) NOT NULL,
   `supervisor` text NOT NULL,
   `no_of_days` varchar(20) NOT NULL,
   `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leavedb`
+--
+
+INSERT INTO `leavedb` (`date_of_filing`, `place`, `type`, `inc_dates`, `recommendation`, `supervisor`, `no_of_days`, `status`) VALUES
+('09/17/2018', 'manila', 'Sick Leave', '0000-00-00', '', 'aaaa', '1', '');
 
 -- --------------------------------------------------------
 
