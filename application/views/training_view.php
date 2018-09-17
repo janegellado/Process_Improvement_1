@@ -11,7 +11,7 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Training Attended</h2>
-                                      <ul class="nav navbar-right panel_toolbox">
+                      <ul class="nav navbar-right panel_toolbox">
                         <li><a data-toggle="modal" data-target="#squarespaceModal" class="butt5" ><i class="fa fa-plus"></i> Add Training </a>
                            <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                               <div class="modal-dialog">
@@ -31,10 +31,35 @@
                       <label for="fullname">Title of Seminar/Workshop/Conference/Short Course (Write in full) :</label>
                       <input type="text" id="fullname" class="form-control" name="fullname" required />
                       <div>&nbsp;</div>
-                     
-                        <label for="email">INCLUSIVE DATES</label><br>
+                
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Inclusive Dates</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <form class="form-horizontal">
+                          <fieldset>
+                            <div class="control-group">
+                              <div class="controls">
+                                <div class="input-prepend input-group">
+                                  <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                  <input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="01/01/2018 - 01/25/2018" />
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </form>
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">No. of Hours</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                         <input type="text" id="place" name="place" value="<?php echo set_value('place'); ?>"required="required" class="form-control col-md-7 col-xs-12" placeholder="hour">
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
                       
-                       <div class="form-group">
+                      <!-- <div class="form-group">
                           <label class="control-label col-md-1 col-sm-1 col-xs-12" for="">FROM</span>
                           </label>
                           <div class="col-md-3 col-sm-3 col-xs-12">
@@ -53,7 +78,7 @@
                             <input type="text" id="" required="required" class="form-control col-md-7 col-xs-12">
                           </div>
                         </div>
-                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>-->
 
                       <label for="sponsor">Conducted/Sponsored By :</label>
                       <input type="text" id="" class="form-control" name="" required />
@@ -65,11 +90,14 @@
                                             </div>
   
                             <!--for buttons--><div class="form-group">
-                                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                                <button class="btn btn-success" type="button" style="margin-left: 50px;"><a href="<?php echo base_url('')?>" style="color: white;">Add</a></button>
-                                                <button type="submit" class="btn btn-success" value="submit">Cancel</button>
-
-                                               </div>
+                                                <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button" style="margin-left: 50px;"><a href="<?php echo base_url('process_improvement/viewLeave')?>" style="color: white;">Cancel</a></button>
+                          
+                          <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                        </div>
+      </div>
+    
                                             </div>
     
                                         </div>
