@@ -7,17 +7,16 @@ class Process_Improvement extends CI_Controller {
 
         $this->load->model('employee_model','employee');
         $this->load->model('leavedb_model','leavedb');
-		    $this->load->model('mr_model','mr');
-		    $this->load->model('ot_model','ot');
-		    $this->load->model('training_model','training');
-		    $this->load->model('trainingsched_model','trainingsched');
+		$this->load->model('mr_model','mr');
+		$this->load->model('ot_model','ot');
+		$this->load->model('training_model','training');
+		$this->load->model('trainingsched_model','trainingsched');
 		
 
     }
 
     public function index()
     { 
-
 
           $data['employee'] = $this->employee->users();
         	$this->load->view('include/header');
@@ -36,6 +35,7 @@ class Process_Improvement extends CI_Controller {
     	}
     	echo json_encode($data);
     }
+
     public function viewEmployeeAdmin(){
         $result_array = $this->employee->read();
         $data['employee'] = $result_array; 
@@ -48,7 +48,7 @@ class Process_Improvement extends CI_Controller {
         
     }
    
-     public function addEmployee(){
+    public function addEmployee(){
         //load the view
         //get form data
         //add to db
@@ -93,6 +93,7 @@ class Process_Improvement extends CI_Controller {
          $record['employeeID']=$employeeID;
          $condition = array('employeeID' => $employeeID);
          $oldRecord = $this->employee->read($condition);
+        
         foreach($oldRecord as $o){
                 $data['employeeID']=$o['employeeID'];
                 $data['employee_name']=$o['employee_name'];
@@ -104,8 +105,9 @@ class Process_Improvement extends CI_Controller {
                 $data['promo_date']=$o['promo_date'];
                 $data['civil_stat']=$o['civil_stat'];
                 $data['cp_no']=$o['cp_no'];
-     }
-     $rules = array(
+              }
+            
+             $rules = array(
                    array('field'=>'employeeID', 'label'=>'Employee ID', 'rules'=>'required'),
                    array('field'=>'employee_name', 'label'=>'Name', 'rules'=>'required'),
                    array('field'=>'pg_level', 'label'=>'PG_Level', 'rules'=>'required'),
@@ -117,33 +119,37 @@ class Process_Improvement extends CI_Controller {
                    array('field'=>'civil_stat', 'label'=>'Civil Status', 'rules'=>'required'),
                    array('field'=>'cp_no', 'label'=>'Contact No', 'rules'=>'required')
                 );
-             $this->form_validation->set_rules($rules);
+            
+            $this->form_validation->set_rules($rules);
+            
             if($this->form_validation->run()==FALSE){
-            $header_data['title'] = "Update Employee";
-            $this->load->view('include/header',$header_data);
-            $this->load->view('updateEmployeeForm',$data);
-            $this->load->view('include/footer');
-        }
+            
+                    $header_data['title'] = "Update Employee";
+                    $this->load->view('include/header',$header_data);
+                    $this->load->view('updateEmployeeForm',$data);
+                    $this->load->view('include/footer');
+             }
             else{
           
-            $newRecord=array(
-                'employeeID'=>$_POST['employeeID'],
-                'employee_name'=>$_POST['employee_name'],
-                'pg_level'=>$_POST['pg_level'],
-                'birthday'=>$_POST['birthday'],
-                'date_hired'=>$_POST['date_hired'],
-                'position'=>$_POST['position'],
-                'email'=>$_POST['email'],
-                'promo_date'=>$_POST['promo_date'],
-                'civil_stat'=>$_POST['civil_stat'],
-                'cp_no'=>$_POST['cp_no']
-            );
-            $this->employee->update($newRecord);
-            redirect('process_improvement/viewEmployeeAdmin');
-            }
-}
+                $newRecord=array(
+                    'employeeID'=>$_POST['employeeID'],
+                    'employee_name'=>$_POST['employee_name'],
+                    'pg_level'=>$_POST['pg_level'],
+                    'birthday'=>$_POST['birthday'],
+                    'date_hired'=>$_POST['date_hired'],
+                    'position'=>$_POST['position'],
+                    'email'=>$_POST['email'],
+                    'promo_date'=>$_POST['promo_date'],
+                    'civil_stat'=>$_POST['civil_stat'],
+                    'cp_no'=>$_POST['cp_no']
+                     );
+                    
+                    $this->employee->update($newRecord);
+                    redirect('process_improvement/viewEmployeeAdmin');
+                 }
+        }
 
-        public function delEmployee($employeeID){
+    public function delEmployee($employeeID){
         $where_array = array('employeeID'=>$employeeID);
         $this->employee->del($where_array);
         redirect('process_improvement/viewEmployeeAdmin');
@@ -152,10 +158,45 @@ class Process_Improvement extends CI_Controller {
     public function viewLeave(){
      
         $header_data['title'] = "Leave";
+        $result_array = $this->leavedb->read();
+        $data['leavedb'] = $result_array; 
         $this->load->view('include/header',$header_data);
-        $this->load->view('leave_view');
-       	$this->load->view('include/footer');
+        $this->load->view('leave_view',$data);
+       	$this->load->view('include/footer');   
+    }
+
+    public function addLeave(){
         
+        $rules = array(
+                   array('field'=>'date_of_filing', 'label'=>'Date of Filing', 'rules'=>'required'),
+                   array('field'=>'place', 'label'=>'Place', 'rules'=>'required'),
+                   array('field'=>'type', 'label'=>'Type of Leave', 'rules'=>'required'),
+                   array('field'=>'no_of_days', 'label'=>'No. of Days', 'rules'=>'required'),
+                   array('field'=>'inc_dates', 'label'=>'Inclusive Dates', 'rules'=>'required'),
+                   array('field'=>'supervisor', 'label'=>'Approver', 'rules'=>'required'),
+                   array('field'=>'status', 'label'=>'Status', 'rules'=>'required'),
+                );
+            $this->form_validation->set_rules($rules);
+            if($this->form_validation->run()==FALSE){
+            $header_data['title'] = "Add Leave Application";
+            $this->load->view('include/header',$header_data);
+            $this->load->view('include/footer');
+        }
+       else{
+          
+            $leaveRecord=array(
+                'date_of_filing'=>$_POST['date_of_filing'],
+                'place'=>$_POST['place'],
+                'type'=>$_POST['type'],
+                'no_of_days'=>$_POST['no_of_days'],
+                'inc_dates' =>$_POST['inc_dates'],
+                'supervisor'=>$_POST['supervisor'],
+                'status'=>$_POST['status'],
+                
+            );
+            $this->leavedb->createleave($leaveRecord);
+            redirect('process_improvement/viewLeave');
+            }
     }
 
     public function viewProperties(){
