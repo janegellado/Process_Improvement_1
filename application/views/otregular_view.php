@@ -6,7 +6,134 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Overtime List</h2>
-                       <ul class="nav navbar-right panel_toolbox">
+                      <ul class="nav navbar-right panel_toolbox">
+                      <li><a data-toggle="modal" data-target="#squarespaceModal" class="butt5" ><i class="fa fa-plus"></i> Add Overtime </a>
+
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h3 class="modal-title" id="lineModalLabel">OVERTIME APPLICATION</h3>
+    </div>
+    <div class="modal-body">
+    <div>&nbsp;</div>
+  <div class="container">
+  <?php echo validation_errors(); ?>
+  
+  <?php echo form_open('process_improvement/addEmployee'); 
+  ?> 
+              <form class="form-horizontal form-label-left">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Filed</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input class="form-control col-md-4 col-sm-4 col-xs-6" type="date" name="date_of_filing" id="date_of_filing" required="required" value="<?php echo date('Y-m-d'); ?>" >
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Authorized OT Time</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <form class="form-horizontal">
+                          <fieldset>
+                            <div class="control-group">
+                              <div class="controls">
+                                <div class="input-prepend input-group">
+                                  <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                  <input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="01/01/2018 - 01/25/2018" />
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </form>
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">OT RATE</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                         <input type="text" id="place" name="place" value="<?php echo set_value('place'); ?>"required="required" class="form-control col-md-7 col-xs-12" placeholder="RATE">
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+                      <label class=" col-md-12 col-sm-12 col-xs-12">ACTUAL OT TIME </label>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Start</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input class="form-control col-md-4 col-sm-4 col-xs-6" type="time" name="date_of_filing" id="date_of_filing" required="required" value="<?php echo date('Y-m-d'); ?>" >
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Finish</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input class="form-control col-md-4 col-sm-4 col-xs-6" type="time" name="date_of_filing" id="date_of_filing" required="required" value="<?php echo date('Y-m-d'); ?>" >
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Hour</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input class="form-control col-md-4 col-sm-4 col-xs-6" type="text" name="date_of_filing" id="date_of_filing" required="required" value="<?php echo date('Y-m-d'); ?>" >
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+                      
+                     <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Minute</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                         <input type="text" for="no_of_days" name="no_of_days" id="no_of_days" required="required" placeholder=" Input no. of working days" class="form-control col-md-5 col-sm-2 col-xs-4" value="<?php echo set_value('no_of_days'); ?>" >
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tasks to be Accomplished</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input class="form-control col-md-4 col-sm-4 col-xs-6" type="text" name="date_of_filing" id="date_of_filing" required="required" value="" placeholder="Input task/s" >
+                        </div>
+                      </div>
+                      <div>&nbsp;</div>
+
+
+                      
+                      
+    <div class="">
+    <label class="control-label col-sm-4">&nbsp;</label>
+  
+    </div>
+  
+   <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button" style="margin-left: 50px;"><a href="<?php echo base_url('process_improvement/viewLeave')?>" style="color: white;">Cancel</a></button>
+                          
+                          <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                        </div>
+      </div>
+    
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+</form>
+
+  <div class="container">
+  <?php echo validation_errors(); ?>
+  
+  <?php echo form_open('process_improvement/viewEmployeeAdmin'); 
+  ?> 
+                       
+            </li>
+                    </ul>
+                      <!-- <ul class="nav navbar-right panel_toolbox">
                         <li><a data-toggle="modal" data-target="#squarespaceModal" class="butt5" ><i class="fa fa-plus"></i> Overtime Application </a>
                            <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                               <div class="modal-dialog">
@@ -83,12 +210,11 @@
                       <input type="text" id="fullname" class="form-control" name="fullname" required />
                   </form>
 
-                            <!--for spacing only-->
                                             <div class="">
                                               <label class="control-label col-sm-4">&nbsp;</label>
                                             </div>
   
-                            <!--for buttons--><div class="form-group">
+                            <div class="form-group">
                                                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                                 <button class="btn btn-success" type="button" style="margin-left: 50px;"><a href="<?php echo base_url('')?>" style="color: white;">Add</a></button>
                                                 <button type="submit" class="btn btn-success" value="submit">Cancel</button>
@@ -102,7 +228,6 @@
                             </div>
                         </div>
                     </div>
-<!--end of modal-->
 
   <div class="container">
   <?php echo validation_errors(); ?>
@@ -111,7 +236,7 @@
   ?> 
                        
             </li>
-                    </ul>
+                    </ul>-->
                     <div class="clearfix"></div>
                   </div>
                       </li>
