@@ -26,21 +26,28 @@
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
-
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <?php echo form_open('','class="form-signin"');
-            ?>
+            <form method="post" action="<?php echo base_url(); ?>process_improvement/login_validate"> 
+
+<?php
+if($this->session->flashdata('item')) {
+  $message = $this->session->flashdata('item');
+?>
+<div class= "<?php echo $message['message']?>;" </div>
+<?php 
+}
+?>
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" name="username" id="user required="" />
+                <input type="text" class="form-control" placeholder="Username" name="username" id="user" required />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="" />
+                <input type="password" class="form-control" placeholder="Password" name="password" id="password" required />
               </div>
               <div>
-                <input class="btn btn-default submit" type="submit" value="Log In" />
+                <input class="btn btn-default submit" type="submit" value="Log In" name="submit"/>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
@@ -99,3 +106,5 @@
     </div>
   </body>
 </html>
+
+

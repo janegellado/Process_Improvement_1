@@ -254,14 +254,14 @@
               <div style="float: left;">
               <a href="" class="btn btn-success btn-xs"><i class="fa fa-check"></i> APPROVED </a>
                <a href="" class="btn btn-success btn-xs"><i class="fa fa-times"></i> DISAPPROVED </a>
-              </div>
 
-              <div class="col-sm-11" style="padding: 0px; margin-top: -30px;margin-left: 60px; text-align: center; ">
+            </div>
+              <div class="col-sm-6">
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">REMARKS: </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="col-md-9 col-sm-12 col-xs-9">
                           <input type="text" class="form-control" placeholder="Default Input" >
                         </div>
                       </div>

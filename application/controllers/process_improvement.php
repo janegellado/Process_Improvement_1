@@ -5,26 +5,115 @@ class Process_Improvement extends CI_Controller {
 	public function __construct(){
         parent::__construct();
 
-        $this->load->model('employee_model','employee');
-        $this->load->model('leavedb_model','leavedb');
+    $this->load->library('session');
+    $this->load->helper(array('form', 'url'));
+    $this->load->library('form_validation'); 
+    $this->load->model('employee_model','employee');
+    $this->load->model('leavedb_model','leavedb');
 		$this->load->model('mr_model','mr');
 		$this->load->model('ot_model','ot');
 		$this->load->model('training_model','training');
 		$this->load->model('trainingsched_model','trainingsched');
 		
-
     }
 
     public function index()
     { 
 
           $data['employee'] = $this->employee->users();
-        	$this->load->view('include/header');
-            $this->load->view('pick', $data);
-        	$this->load->view('include/footer');
+          $this->load->view('login_view', $data);
     }
 
-    public function display()
+  public function login_validate(){
+    $this->form_validation->set_rules('username', 'Username', 'required');
+    $this->form_validation->set_rules('password', 'Password', 'required');
+    if($this->form_validation->run())
+    {
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+
+        if ($this->employee->can_login($username, $password))
+        {
+          $session_data = array (
+              'username' => $username,
+              'password' => $password,
+              'logged_in' => TRUE
+              );
+              $this->session->set_userdata($session_data);
+              $data['username'] = $this->session->userdata('username');            
+
+              $userinfo = $this->employee->read($data['username']);
+              foreach($userinfo as $i){
+              $info = array(
+                'id' => $i['id'],
+                'username' => $i['username'],
+                'type'=> $i['type']
+              );
+              $info;
+            }       
+            $data['success'] = true;  
+            redirect('process_improvement/EmployeeProfile', 'refresh');
+        }
+        else
+        {
+          $this->session->set_flashdata('item',array('message' => 'Invalid Email or Password', 'class'));
+          redirect('process_improvement/index');
+        }
+    }
+    else
+    {
+       $this->session->set_userdata('username','username');
+       $this->index();
+    }
+  }
+
+    public function logout(){
+
+      $this->session->unset_userdata('username');
+      $this->session->unset_userdata('headername');
+      $this->session->unset_userdata('logged_in');
+      redirect(base_url(), 'refresh');
+  }
+
+    public function EmployeeProfile()
+    {
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut = array(
+                      'type'=>$t['type'],
+                      'id'=>$t['id']
+          );
+          $types[]=$ut;
+        }
+        $userid=$ut['id'];
+        $info = $this->employee->remployee($userid);
+        foreach($info as $f){
+          $in=array(
+            'id'=>$f['employeeID'],
+            'fname'=>$f['fname'],
+            'lname'=>$f['lname'],
+            'mname'=>$f['mname'],
+            'pg'=>$f['pg_level'],
+            'bday'=>$f['birthday'],
+            'dh'=>$f['date_hired'],
+            'pos'=>$f['position'],
+            'email'=>$f['email'],
+            'pd'=>$f['promo_date'],
+            'cs'=>$f['civil_stat'],
+            'cp'=>$f['cp_no']
+          );
+          $infoss[]=$in;
+        }
+
+        $infos['info'] = $infoss;
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
+        $this->load->view('pick',$infos);
+        $this->load->view('include/footer');
+    }
+
+  public function display()
     {			
 
     $employeeID = $this->input->post('employeeID');
@@ -37,14 +126,23 @@ class Process_Improvement extends CI_Controller {
     }
 
     public function viewEmployeeAdmin(){
-        $result_array = $this->employee->read();
+        $result_array = $this->employee->read_employees();
         $data['employee'] = $result_array; 
         $id =  $this->employee->count();
         $data['employeeID'] = (string) $id++;
         $header_data['title'] = "View Employees";
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                   'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('employee_admin',$data);
-       $this->load->view('include/footer');
+        $this->load->view('include/footer');
         
     }
    
@@ -66,8 +164,16 @@ class Process_Improvement extends CI_Controller {
                 );
             $this->form_validation->set_rules($rules);
             if($this->form_validation->run()==FALSE){
-            $header_data['title'] = "Add Employee";
-            $this->load->view('include/header',$header_data);
+            $data1 = $_SESSION['username'];
+            $type= $this->employee->read($data1);
+            foreach($type as $t){
+              $ut= array(
+                          'type'=>$t['type']
+              );
+              $types[]=$ut;
+            }
+            $usertype['types'] = $types;
+            $this->load->view('include/header',$usertype);
             $this->load->view('include/footer');
         }
        else{
@@ -90,7 +196,7 @@ class Process_Improvement extends CI_Controller {
     }
 
     public function updateEmployee($employeeID){
-         $record['employeeID']=$employeeID;
+         $employeeRecord['employeeID']=$employeeID;
          $condition = array('employeeID' => $employeeID);
          $oldRecord = $this->employee->read($condition);
         
@@ -124,8 +230,16 @@ class Process_Improvement extends CI_Controller {
             
             if($this->form_validation->run()==FALSE){
             
-                    $header_data['title'] = "Update Employee";
-                    $this->load->view('include/header',$header_data);
+                    $data1 = $_SESSION['username'];
+                    $type= $this->employee->read($data1);
+                    foreach($type as $t){
+                      $ut= array(
+                                  'type'=>$t['type']
+                      );
+                      $types[]=$ut;
+                    }
+                    $usertype['types'] = $types;
+                    $this->load->view('include/header',$usertype);
                     $this->load->view('updateEmployeeForm',$data);
                     $this->load->view('include/footer');
              }
@@ -157,10 +271,18 @@ class Process_Improvement extends CI_Controller {
 
     public function viewLeave(){
      
-        $header_data['title'] = "Leave";
         $result_array = $this->leavedb->read();
         $data['leavedb'] = $result_array; 
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('leave_view',$data);
        	$this->load->view('include/footer');   
     }
@@ -178,8 +300,16 @@ class Process_Improvement extends CI_Controller {
                 );
             $this->form_validation->set_rules($rules);
             if($this->form_validation->run()==FALSE){
-            $header_data['title'] = "Add Leave Application";
-            $this->load->view('include/header',$header_data);
+            $data1 = $_SESSION['username'];
+            $type= $this->employee->read($data1);
+            foreach($type as $t){
+              $ut= array(
+                          'type'=>$t['type']
+              );
+              $types[]=$ut;
+            }
+            $usertype['types'] = $types;
+            $this->load->view('include/header',$usertype);
             $this->load->view('include/footer');
         }
        else{
@@ -201,8 +331,16 @@ class Process_Improvement extends CI_Controller {
 
     public function viewProperties(){
      
-        $header_data['title'] = "Property Assigned";
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('mradmin_view');
         $this->load->view('include/footer');
         
@@ -210,17 +348,48 @@ class Process_Improvement extends CI_Controller {
 
     public function updateProperties(){
         
-            $title['title']="Update Property Assigned";
-            $this->load->view('include/header',$title);
+            $data1 = $_SESSION['username'];
+            $type= $this->employee->read($data1);
+            foreach($type as $t){
+              $ut= array(
+                          'type'=>$t['type']
+              );
+              $types[]=$ut;
+            }
+            $usertype['types'] = $types;
+            $this->load->view('include/header',$usertype);
             $this->load->view('updatePropertyForm',$data);
             $this->load->view('include/footer');
         
     }
-
+       public function viewTrainingAdmin(){
+     
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
+        $this->load->view('trainingadmin_view');
+        $this->load->view('include/footer');
+        
+    }
     public function viewTraining(){
      
-        $header_data['title'] = "Training Attended";
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('training_view');
         $this->load->view('include/footer');
         
@@ -229,8 +398,16 @@ class Process_Improvement extends CI_Controller {
 
     public function updateTraining(){
         
-            $title['title']="Update Training Attended";
-            $this->load->view('include/header',$title);
+            $data1 = $_SESSION['username'];
+            $type= $this->employee->read($data1);
+            foreach($type as $t){
+              $ut= array(
+                          'type'=>$t['type']
+              );
+              $types[]=$ut;
+            }
+            $usertype['types'] = $types;
+            $this->load->view('include/header',$usertype);
             $this->load->view('updateTrainingForm',$data);
             $this->load->view('include/footer');
         
@@ -238,10 +415,18 @@ class Process_Improvement extends CI_Controller {
 
      public function viewOvertimeRegular(){
      
-        $header_data['title'] = "Employee Admin";
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('otregular_view');
-       $this->load->view('include/footer');
+        $this->load->view('include/footer');
         
         
     }
@@ -249,44 +434,62 @@ class Process_Improvement extends CI_Controller {
 
      public function viewOvertimeContractual(){
      
-        $header_data['title'] = "Employee Admin";
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('otcontractual_view');
-       $this->load->view('include/footer');
+        $this->load->view('include/footer');
         
         
     }
     public function viewMR(){
      
-        $header_data['title'] = "MR";
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('mr_view');
-        $this->load->view('include/footer');
-        
-    }
-    public function newdisplay()
-    {
-    	$this->load->view('include/header');
-        $this->load->view('management_dashboard');
-        $this->load->view('include/footer');
+        $this->load->view('include/footer');   
     }
 
 
     public function viewSVLeave(){
      
-        $header_data['title'] = "Supervisor's Leave";
-        $this->load->view('include/header',$header_data);
+        $data1 = $_SESSION['username'];
+        $type= $this->employee->read($data1);
+        foreach($type as $t){
+          $ut= array(
+                      'type'=>$t['type']
+          );
+          $types[]=$ut;
+        }
+        $usertype['types'] = $types;
+        $this->load->view('include/header',$usertype);
         $this->load->view('sv_leave');
         $this->load->view('include/footer');
         
     }
 
-   
 
 
-        }
+}
     
-     
-    
+
 
 ?>
+
+
+

@@ -63,7 +63,7 @@
 
                 <div class="profile_info">
                  <span>Welcome,</span>
-                <h2>Employee</h2>
+                <h2><?php echo($_SESSION['username'])?></h2>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -74,35 +74,22 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section" >
+                <?php foreach ($types as $usertype)
+                {
+                    if($usertype['type']=='admin')
+                    {
+                ?>
+                <!--START -->
                 <ul class="nav side-menu">
                   
-                  <li><a href="<?php echo base_url('process_improvement/')?>"> <i class="fa fa-user"></i> PROFILE </a>
+                  <li><a href="<?php echo base_url('process_improvement/EmployeeProfile')?>"> <i class="fa fa-user"></i> PROFILE </a>
                   </li>
                   <li><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>"> <i class="fa fa-user-secret"></i>EMPLOYEE ADMIN</a>
                   </li>
-                  <li><a href="<?php echo base_url('process_improvement/viewLeave')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
-                  </li>
-
-                  <li><a><i class="fa fa-clock-o"></i> OVERTIME <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url('process_improvement/viewOvertimeRegular')?>">REGULAR EMPLOYEE</a></li>
-                      <li><a href="<?php echo base_url('process_improvement/viewOvertimeContractual')?>">CONTRACTUAL EMPLOYEE</a></li>
-                    </ul>
-                  </li>
-
-                  <li><a href="<?php echo base_url('process_improvement/viewSVLeave')?>"><i class="fa fa-info"></i>SUPERVISOR</a>
-                    
-                  </li>
-          
-                  <li><a href="<?php echo base_url('process_improvement/viewMR')?>"> <i class="fa fa-user"></i>MR</a>
-                  </li>
+            
           
                   <li>
                   <a href="<?php echo base_url('process_improvement/viewProperties')?>"> <i class="fa fa-user-secret"></i>MR ADMIN</a>
-                  </li>
-                
-                  <li>
-                   <a href="<?php echo base_url('process_improvement/viewTraining')?>"> <i class="fa fa-book"></i>TRAINING</a>
                   </li>
                 
                   <li>
@@ -110,6 +97,55 @@
                   </li>
 
                 </ul>
+                <!-- end -->
+                <?php 
+                  }
+                
+
+                else if($usertype['type']=='superadmin')
+                {
+                ?>
+                <!--START -->
+                <ul class="nav side-menu">
+                  
+                  
+
+                  <li><a href="<?php echo base_url('process_improvement/viewSVLeave')?>"><i class="fa fa-info"></i>SUPERVISOR</a>
+                  </li>
+          
+                  
+                
+                  
+
+                </ul>
+                <!-- end -->
+                <?php 
+                }
+                else if($usertype['type']=="employee")
+                {
+                  ?>
+                  <ul class="nav side-menu">
+                  <li><a href="<?php echo base_url('process_improvement/EmployeeProfile')?>"> <i class="fa fa-user"></i> PROFILE </a>
+                  </li>
+                  <li><a href="<?php echo base_url('process_improvement/viewLeave')?>" > <i class="fa fa-calendar"></i>LEAVE </a>
+                  </li>
+                  <li><a><i class="fa fa-clock-o"></i> OVERTIME <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo base_url('process_improvement/viewOvertimeRegular')?>">REGULAR EMPLOYEE</a></li>
+                      <li><a href="<?php echo base_url('process_improvement/viewOvertimeContractual')?>">CONTRACTUAL EMPLOYEE</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="<?php echo base_url('process_improvement/viewMR')?>"> <i class="fa fa-user"></i>MR</a>
+                  </li>
+                  <li>
+                   <a href="<?php echo base_url('process_improvement/viewTraining')?>"> <i class="fa fa-book"></i>TRAINING</a>
+                  </li>
+                </ul>
+                  <?php
+                }
+                
+              }
+              ?>
               </div>
               <div class="menu_section">
                 
@@ -135,22 +171,17 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                    <img src="images/img.jpg" alt="">Welcome, Employee!
+                    <img src="images/img.jpg" alt="">Welcome, <?php echo($_SESSION['username'])?>!
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     
                     
                     <li><a href="<?php echo base_url('knoxville/changepass'); ?>"><i class="fa fa-lock pull-right"></i> Change Password</a></li>
-                    <li><a href="<?php echo base_url('login/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                  </ul>
-                </li>
-
-                </nav>
+                    <li><a href="<?php echo base_url('process_improvement/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
               </ul>
-            
+            </nav>
           </div>
         </div>
-        <!-- /top navigation -->

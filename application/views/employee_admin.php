@@ -42,8 +42,14 @@
 
                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee Name</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                         <input type="text" class="form-control has-feedback-left"  required="required"for="employee_name" id="inputSuccess2" placeholder=" Employee Name" name="employee_name" value="<?php echo set_value('employee_name'); ?>" id="employee_name">
+                        <div class="col-md-3 col-sm-9 col-xs-12">
+                         <input type="text" class="form-control"  required="required"for="employee_name" id="inputSuccess2" placeholder=" Last Name" name="employee_name" value="<?php echo set_value('employee_name'); ?>" id="employee_name">
+                        </div>
+                        <div class="col-md-3 col-sm-9 col-xs-12">
+                         <input type="text" class="form-control"  required="required"for="employee_name" id="inputSuccess2" placeholder=" First Name" name="employee_name" value="<?php echo set_value('employee_name'); ?>" id="employee_name">
+                        </div>
+                        <div class="col-md-3 col-sm-9 col-xs-12">
+                         <input type="text" class="form-control"  required="required"for="employee_name" id="inputSuccess2" placeholder="Middle Name" name="employee_name" value="<?php echo set_value('employee_name'); ?>" id="employee_name">
                         </div>
                       </div>
 
@@ -164,7 +170,7 @@
             <?php
         if($employee!=null){
                 foreach($employee as $c){  
-                    echo "<tr><td>".$c['employeeID']."</td><td>".$c['employee_name']."</td><td>".$c['pg_level']."</td><td>".$c['birthday']."</td><td>".$c['date_hired']."</td><td>".$c['position']."</td><td>".$c['email']."</td><td>".$c['promo_date']."</td><td>".$c['civil_stat']."</td><td>".$c['cp_no']."</td>".'
+                    echo "<tr><td>".$c['employeeID']."</td><td>".$c['lname'].", ".$c['fname']." ".$c['mname']."</td><td>".$c['pg_level']."</td><td>".$c['birthday']."</td><td>".$c['date_hired']."</td><td>".$c['position']."</td><td>".$c['email']."</td><td>".$c['promo_date']."</td><td>".$c['civil_stat']."</td><td>".$c['cp_no']."</td>".'
                     <td><a href="'.base_url('process_improvement/updateEmployee/'.$c['employeeID']).'" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a><a href="'.base_url('process_improvement/delEmployee/'.$c['employeeID']).'"class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a></td></tr>';
                     
                 }
