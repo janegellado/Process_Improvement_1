@@ -1,11 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2018 at 03:22 PM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+
+-- Generation Time: Oct 17, 2018 at 05:18 PM
+-- Server version: 10.1.29-MariaDB
+-- PHP Version: 7.2.0
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,7 +32,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `employee` (
   `employeeID` varchar(20) NOT NULL,
-  `employee_name` varchar(50) NOT NULL,
+
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `mname` varchar(50) NOT NULL,
+
   `pg_level` varchar(10) NOT NULL,
   `birthday` varchar(15) NOT NULL,
   `date_hired` varchar(15) NOT NULL,
@@ -38,21 +44,34 @@ CREATE TABLE `employee` (
   `email` varchar(50) NOT NULL,
   `promo_date` varchar(20) NOT NULL,
   `civil_stat` varchar(20) NOT NULL,
-  `cp_no` int(20) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `cp_no` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`employeeID`, `employee_name`, `pg_level`, `birthday`, `date_hired`, `position`, `email`, `promo_date`, `civil_stat`, `cp_no`, `username`, `password`) VALUES
-('1', 'Janelyn', '6', '08/08/2016', '06/18/2018', 'OJT', 'janelynanngellado@gmail.com', '06/18/2018', 'single', 12355, '', ''),
-('1234', 'Al', '5', '1998-11-07', '2018-09-17', 'OJT', 'alorias', '2018-09-17', 'single', 911111111, '', ''),
-('2', 'Chesca', '5', '11/15/98', '06/18/2018', 'OJT', 'chesca@gmail.com', '06/18/2018', 'single', 12355, '', ''),
-('3', 'Xandra', '5', '01/30/99', '06/18/2018', 'OJT', 'xandra@gmail.com', '06/18/2018', 'single', 12355, '', ''),
-('4', 'Noel', '5', '11/18/1998', '06/18/2018', 'Programmer', 'noelbenusa@gmail.com', '06/18/2018', 'single', 1234567891, 'noel', '12345677');
+
+INSERT INTO `employee` (`employeeID`, `fname`, `lname`, `mname`, `pg_level`, `birthday`, `date_hired`, `position`, `email`, `promo_date`, `civil_stat`, `cp_no`) VALUES
+('01', 'Janelyn', 'Gellado', '', '6', '08/08/2016', '06/18/2018', 'OJT', 'janelynanngellado@gmail.com', '06/18/2018', 'single', 12355),
+('02', 'Herchell Mari', 'Forteo', '', '6', '1111-11-11', '2222-02-22', 'xxx', 'xxxxx', '3333-03-31', 'SINGLE', 12345789),
+('03', 'Al Francis', 'Orias', 'Protacio', '5', '1998-11-07', '2018-09-17', 'OJT', 'alorias', '2018-09-17', 'single', 911111111),
+('04', 'Franchesca Marie', 'Cortez', 'Cadondon', '5', '11/15/98', '06/18/2018', 'OJT', 'chesca@gmail.com', '06/18/2018', 'single', 12355),
+('05', 'Alexandra', 'Bello', '', '5', '01/30/99', '06/18/2018', 'OJT', 'xandra@gmail.com', '06/18/2018', 'single', 12355),
+('06', 'Red', 'Aricayos', 'Mauhay', '10', '2018-10-18', '2018-10-11', 'Admin', 'red@gmail.com', '2018-10-12', 'Single', 2147483647),
+('07', 'Noel', 'Benus', 'Danog', '10', '2018-10-06', '2018-10-19', 'Employee', 'Noel@gmail.com', '2018-10-12', 'Single', 2147483647);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_type`
+--
+
+CREATE TABLE `employee_type` (
+  `employetype_id` varchar(25) NOT NULL,
+  `employee_type` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
@@ -77,6 +96,30 @@ CREATE TABLE `leavedb` (
 
 INSERT INTO `leavedb` (`date_of_filing`, `place`, `type`, `inc_dates`, `recommendation`, `supervisor`, `no_of_days`, `status`) VALUES
 ('09/17/2018', 'manila', 'Sick Leave', '0000-00-00', '', 'aaaa', '1', '');
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `id` varchar(20) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `password` varchar(25) NOT NULL,
+  `type` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
+('01', 'Janelyn', 'admin', 'admin'),
+('06', 'Red', '12345', 'superadmin'),
+('07', 'Noel', '12345', 'employee');
+
 
 -- --------------------------------------------------------
 
@@ -157,10 +200,24 @@ ALTER TABLE `employee`
   ADD PRIMARY KEY (`employeeID`);
 
 --
+
+-- Indexes for table `employee_type`
+--
+ALTER TABLE `employee_type`
+  ADD PRIMARY KEY (`employetype_id`);
+
+--
+
 -- Indexes for table `leavedb`
 --
 ALTER TABLE `leavedb`
   ADD PRIMARY KEY (`date_of_filing`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `mr`
