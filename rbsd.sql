@@ -3,9 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+
 -- Generation Time: Oct 17, 2018 at 05:18 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,9 +32,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `employee` (
   `employeeID` varchar(20) NOT NULL,
+
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `mname` varchar(50) NOT NULL,
+
   `pg_level` varchar(10) NOT NULL,
   `birthday` varchar(15) NOT NULL,
   `date_hired` varchar(15) NOT NULL,
@@ -46,6 +50,7 @@ CREATE TABLE `employee` (
 --
 -- Dumping data for table `employee`
 --
+
 
 INSERT INTO `employee` (`employeeID`, `fname`, `lname`, `mname`, `pg_level`, `birthday`, `date_hired`, `position`, `email`, `promo_date`, `civil_stat`, `cp_no`) VALUES
 ('01', 'Janelyn', 'Gellado', '', '6', '08/08/2016', '06/18/2018', 'OJT', 'janelynanngellado@gmail.com', '06/18/2018', 'single', 12355),
@@ -66,6 +71,7 @@ CREATE TABLE `employee_type` (
   `employetype_id` varchar(25) NOT NULL,
   `employee_type` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
@@ -91,6 +97,7 @@ CREATE TABLE `leavedb` (
 INSERT INTO `leavedb` (`date_of_filing`, `place`, `type`, `inc_dates`, `recommendation`, `supervisor`, `no_of_days`, `status`) VALUES
 ('09/17/2018', 'manila', 'Sick Leave', '0000-00-00', '', 'aaaa', '1', '');
 
+
 -- --------------------------------------------------------
 
 --
@@ -112,6 +119,7 @@ INSERT INTO `login` (`id`, `username`, `password`, `type`) VALUES
 ('01', 'Janelyn', 'admin', 'admin'),
 ('06', 'Red', '12345', 'superadmin'),
 ('07', 'Noel', '12345', 'employee');
+
 
 -- --------------------------------------------------------
 
@@ -192,12 +200,14 @@ ALTER TABLE `employee`
   ADD PRIMARY KEY (`employeeID`);
 
 --
+
 -- Indexes for table `employee_type`
 --
 ALTER TABLE `employee_type`
   ADD PRIMARY KEY (`employetype_id`);
 
 --
+
 -- Indexes for table `leavedb`
 --
 ALTER TABLE `leavedb`

@@ -20,21 +20,6 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h3>Add Employee</h3>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
                     <div class="clearfix"></div>
                </div>
                   <div class="x_content">
@@ -42,43 +27,91 @@
         <div class="col-md-6" style="padding: 10px; text-align: center; margin-left: 250px;">
           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-                      <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="employeeID" id="inputSuccess2" placeholder="Employee ID" name="employeeID" value="<?php echo set_value('employeeID'); ?>" id="employeeID">
-                        <span class="fa fa-id form-control-feedback left required" aria-hidden="true"></span>
-                      </div>
-		
-                      <div class="form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="employee_name" id="inputSuccess2" placeholder="Employee Name" name="employee_name" value="<?php echo set_value('employee_name'); ?>" id="employee_name">
-                        <span class="fa fa-user form-control-feedback left required" aria-hidden="true"></span>
-                      </div>
-
-                      <div class=" form-group has-feedback">
-                        <input type="date" class="form-control has-feedback-left" for="bday" id="inputSuccess2" placeholder="Birthdate" name="bday" value="<?php echo set_value('bday'); ?>" id="bday">
-                        <span class="fa fa-birthday-cake form-control-feedback left required" aria-hidden="true"></span>
-                      </div>
-	                  
-					  
-                      <div class=" form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" for="email" id="inputSuccess2" placeholder="  Email" name="email" value="<?php echo set_value('email'); ?>" id="email">
-                        <span class="fa fa-at form-control-feedback left required" aria-hidden="true"></span>
-                      </div>
-					  
-					  
-					  
-                      <div class=" form-group has-feedback">
-                        <input type="number" class="form-control has-feedback-left" for="cnum" id="inputSuccess2" placeholder="  Contact Number" name="cnum" value="<?php echo set_value('cnum'); ?>" id="cnum">
-                        <span class="fa fa-mobile form-control-feedback left required" aria-hidden="true"></span>
-                      </div>
-					  
                       <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button class="btn btn-primary" type="button"><a href="<?php echo base_url('process_improvement/viewSalesAgents')?>"style="color: white;">Cancel</a></button>
-                          <button class="btn btn-primary" type="reset">Reset</button>
-                          <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Name</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('employee_name')?>">
                         </div>
                       </div>
-                     
-                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Employee ID</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('employeeID')?>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">PG Level</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('pg_level')?>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Birthdate</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('birthday')?>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Hired</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="value="<?php echo set_value('date_hired')?>"">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('email')?>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Position</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('position')?>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact No.</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('cp_no')?>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Last Promotion</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="date" class="form-control" placeholder="Default Input" value="<?php echo set_value('promo_date')?>">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Civil Status</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Default Input" value="<?php echo set_value('civil_stat')?>">
+                        </div>
+                      </div>
+      
+    
+  
+  <div class="">
+    <label class="control-label col-sm-4">&nbsp;</label>
+  
+    </div>
+  
+   <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button" style="margin-left: 30%;"><a href="<?php echo base_url('process_improvement/viewEmployeeAdmin')?>" style="color: white;">Cancel</a></button>
+                          
+                          <button type="submit" class="btn btn-success" value="submit">Submit</button>
+                        </div>
+      </div>
+    
+  </div>
   </form>
   </div>
   </div>

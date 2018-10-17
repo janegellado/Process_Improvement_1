@@ -3,7 +3,8 @@
 class Leavedb_model extends CI_Model {
     private $table = 'leavedb';
     
-    function create($leaveRecord){
+    function createleave($leaveRecord){
+        
         $this->db->insert($this->table, $leaveRecord);
     }
     

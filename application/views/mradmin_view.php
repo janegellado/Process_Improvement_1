@@ -2,7 +2,7 @@
     <div class="container body">
       <div class="main_container">
 
-<div class="right_col" role="main">
+      <div class="right_col" role="main">
           <div class="">
     
           <div class="clearfix"></div>
@@ -30,7 +30,7 @@
                                  <input type="text" class="form-control" placeholder="Default Input" >
                                </div>
                           </div>
-                              <div class="x_title"> <br /></div>
+                              
                      
 
                           <div class="form-group col">
@@ -69,7 +69,7 @@
                           </div>
                         </div>
                       </form>               
-          
+        
 
 
  <!--right side-->  
@@ -82,7 +82,7 @@
                           <input type="text" class="form-control" placeholder="Default Input" readonly="readonly">
                         </div>
                       </div>
-                      <div class="x_title"> <br /></div>
+                      
 
                       <div class="form-group">
                         <label class="control-label col-md-5 col-sm-5 col-xs-12">Unit Value</label>
@@ -99,20 +99,11 @@
                       </div>
           </form>
         </div>
-      </div>
+   
 
-        
-                    
-                     </div>
-                   </div>
-                 </div>
-
-
-    <div class="clearfix"></div>
-    <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
+           
+               
+                  <div class="x_title" style="margin-top: 25%;">
                     <h4>List of Property</h4>
                     
                     <div class="clearfix"></div>
@@ -135,14 +126,14 @@
           </tr>
         </thead>
         <tbody>
-            <?php
+           <!-- <?php
         if($mr!=null){
                 foreach($mr as $c){  
                     echo "<tr><td>".$c['employeeID']."</td><td>".$c['employee_name']."</td><td>".$c['mr_no']."</td><td>".$c['property_no']."</td><td>".$c['property_name']."</td><td>".$c['description']."</td>><td>".$c['date_assigned'].'</td></tr>';
                    
                 }
         }
-            ?>
+            ?>-->
         </tbody>
     </table>
     </div>
@@ -152,6 +143,6 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+
+
 </body>
